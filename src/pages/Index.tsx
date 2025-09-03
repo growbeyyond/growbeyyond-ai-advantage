@@ -4,6 +4,8 @@ import ServicesOverview from "@/components/ServicesOverview";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
 import ChatBot from "@/components/ChatBot";
+import WelcomePopup from "@/components/WelcomePopup";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -16,6 +18,8 @@ const Index = () => {
         <ContactSection />
       </main>
       <ChatBot />
+      <WelcomePopup />
+      <WhatsAppFloat />
     </div>
   );
 };

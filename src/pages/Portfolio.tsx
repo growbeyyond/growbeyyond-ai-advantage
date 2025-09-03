@@ -1,98 +1,13 @@
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
-import { Card, CardContent } from "@/components/ui/card";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ExternalLink, 
-  TrendingUp, 
-  Users, 
-  DollarSign,
-  Calendar,
-  ArrowRight
-} from "lucide-react";
+import { ArrowRight, TrendingUp, DollarSign, Users, Calendar, Target, BarChart3, Zap, Award, CheckCircle } from "lucide-react";
+import { realCaseStudies, caseStudyStats } from "@/data/caseStudies";
 
 const Portfolio = () => {
-  const caseStudies = [
-    {
-      title: "TechFlow Solutions",
-      industry: "B2B SaaS",
-      challenge: "Low conversion rates and high customer acquisition costs",
-      solution: "Implemented AI-powered lead scoring and personalized email campaigns",
-      results: {
-        conversion: "+340%",
-        cac: "-65%",
-        revenue: "$2.4M"
-      },
-      timeline: "6 months",
-      image: "bg-gradient-to-br from-blue-500 to-purple-600"
-    },
-    {
-      title: "GreenTech Startup",
-      industry: "Clean Energy",
-      challenge: "Zero brand awareness in competitive market",
-      solution: "AI content strategy with predictive audience targeting",
-      results: {
-        conversion: "+580%",
-        cac: "-45%",
-        revenue: "$1.8M"
-      },
-      timeline: "8 months",
-      image: "bg-gradient-to-br from-green-500 to-teal-600"
-    },
-    {
-      title: "InnovateCorp",
-      industry: "E-commerce",
-      challenge: "Declining ROAS and poor attribution tracking",
-      solution: "Multi-touch attribution AI and automated bidding optimization",
-      results: {
-        conversion: "+225%",
-        cac: "-38%",
-        revenue: "$5.2M"
-      },
-      timeline: "4 months",
-      image: "bg-gradient-to-br from-orange-500 to-red-600"
-    },
-    {
-      title: "HealthTech Pro",
-      industry: "Healthcare",
-      challenge: "Complex sales cycle and low lead quality",
-      solution: "AI-powered lead nurturing and predictive analytics",
-      results: {
-        conversion: "+450%",
-        cac: "-55%",
-        revenue: "$3.1M"
-      },
-      timeline: "10 months",
-      image: "bg-gradient-to-br from-cyan-500 to-blue-600"
-    },
-    {
-      title: "RetailMax",
-      industry: "Retail",
-      challenge: "Seasonal fluctuations and inventory management",
-      solution: "Demand forecasting AI and dynamic pricing optimization",
-      results: {
-        conversion: "+190%",
-        cac: "-28%",
-        revenue: "$4.7M"
-      },
-      timeline: "12 months",
-      image: "bg-gradient-to-br from-pink-500 to-purple-600"
-    },
-    {
-      title: "FinanceForward",
-      industry: "Fintech",
-      challenge: "Strict compliance requirements and trust building",
-      solution: "Compliant AI content and trust-building automation",
-      results: {
-        conversion: "+280%",
-        cac: "-42%",
-        revenue: "$6.3M"
-      },
-      timeline: "9 months",
-      image: "bg-gradient-to-br from-indigo-500 to-purple-600"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -124,22 +39,22 @@ const Portfolio = () => {
             </p>
 
             {/* Overall Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
-              <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">$24M+</div>
-                <div className="text-muted-foreground text-sm">Revenue Generated</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+              <div className="glass-card p-6 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.totalRevenue}</div>
+                <div className="text-sm text-muted-foreground">Revenue Generated</div>
               </div>
-              <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">340%</div>
-                <div className="text-muted-foreground text-sm">Avg Conversion Increase</div>
+              <div className="glass-card p-6 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.avgGrowth}</div>
+                <div className="text-sm text-muted-foreground">Avg Growth Rate</div>
               </div>
-              <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">500+</div>
-                <div className="text-muted-foreground text-sm">Campaigns Launched</div>
+              <div className="glass-card p-6 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.clientsSaved}</div>
+                <div className="text-sm text-muted-foreground">Client Savings</div>
               </div>
-              <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">50+</div>
-                <div className="text-muted-foreground text-sm">Happy Clients</div>
+              <div className="glass-card p-6 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.companiesTransformed}</div>
+                <div className="text-sm text-muted-foreground">Companies Transformed</div>
               </div>
             </div>
           </div>
@@ -157,75 +72,82 @@ const Portfolio = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {caseStudies.map((study, index) => (
-                <Card 
-                  key={index}
-                  className="glass-card border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-intense hover:-translate-y-2 group"
-                >
-                  <CardContent className="p-0">
-                    {/* Image/Header */}
-                    <div className={`h-48 ${study.image} relative overflow-hidden rounded-t-lg`}>
-                      <div className="absolute inset-0 bg-black/30"></div>
-                      <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="text-xs">
-                          {study.industry}
-                        </Badge>
-                      </div>
-                      <div className="absolute bottom-4 left-4 text-white">
-                        <h3 className="text-xl font-bold">{study.title}</h3>
-                      </div>
-                      <div className="absolute top-4 right-4">
-                        <div className="flex items-center text-white text-xs">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {study.timeline}
-                        </div>
-                      </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {realCaseStudies.map((study, index) => (
+              <Card key={index} className={`glass-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group overflow-hidden border-primary/20`}>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <Badge variant="outline" className="text-xs border-primary/20">
+                      {study.industry}
+                    </Badge>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      {study.timeline}
+                    </div>
+                  </div>
+
+                  <CardTitle className="text-xl mb-3 leading-tight text-primary">
+                    {study.title}
+                  </CardTitle>
+
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <h4 className="font-semibold text-sm text-primary mb-2 flex items-center gap-2">
+                        <Target className="h-4 w-4" />
+                        Challenge
+                      </h4>
+                      <p className="text-sm text-muted-foreground">{study.challenge}</p>
                     </div>
 
-                    <div className="p-6">
-                      {/* Challenge & Solution */}
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-sm text-muted-foreground mb-2">CHALLENGE</h4>
-                        <p className="text-sm mb-4">{study.challenge}</p>
-                        
-                        <h4 className="font-semibold text-sm text-muted-foreground mb-2">SOLUTION</h4>
-                        <p className="text-sm">{study.solution}</p>
-                      </div>
-
-                      {/* Results */}
-                      <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="text-center">
-                          <div className="flex items-center justify-center mb-1">
-                            <TrendingUp className="w-4 h-4 text-primary" />
-                          </div>
-                          <div className="text-lg font-bold text-primary">{study.results.conversion}</div>
-                          <div className="text-xs text-muted-foreground">Conversions</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="flex items-center justify-center mb-1">
-                            <Users className="w-4 h-4 text-secondary" />
-                          </div>
-                          <div className="text-lg font-bold text-secondary">{study.results.cac}</div>
-                          <div className="text-xs text-muted-foreground">CAC</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="flex items-center justify-center mb-1">
-                            <DollarSign className="w-4 h-4 text-accent" />
-                          </div>
-                          <div className="text-lg font-bold text-accent">{study.results.revenue}</div>
-                          <div className="text-xs text-muted-foreground">Revenue</div>
-                        </div>
-                      </div>
-
-                      <Button variant="outline" className="w-full group">
-                        View Full Case Study
-                        <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                    <div>
+                      <h4 className="font-semibold text-sm text-primary mb-2 flex items-center gap-2">
+                        <Zap className="h-4 w-4" />
+                        AI Solution
+                      </h4>
+                      <p className="text-sm text-muted-foreground">{study.solution}</p>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+
+                  <div className="space-y-4 mb-6">
+                    <h4 className="font-semibold text-sm text-primary flex items-center gap-2">
+                      <Award className="h-4 w-4" />
+                      Detailed Results
+                    </h4>
+                    <div className="grid grid-cols-1 gap-3">
+                      {study.metrics.map((metric, metricIndex) => (
+                        <div key={metricIndex} className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-sm font-medium">{metric.label}</span>
+                            <span className="text-xs text-primary font-bold">+{metric.improvement}</span>
+                          </div>
+                          <div className="flex justify-between text-xs text-muted-foreground">
+                            <span>Before: {metric.before}</span>
+                            <span>After: {metric.after}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6 p-4 bg-gradient-primary/5 rounded-lg border border-primary/10">
+                    <h4 className="font-semibold text-sm text-primary mb-2 flex items-center gap-2">
+                      <Users className="h-4 w-4" />
+                      Client Testimonial
+                    </h4>
+                    <p className="text-sm text-muted-foreground italic mb-3">"{study.testimonial}"</p>
+                    <div className="text-xs">
+                      <div className="font-semibold text-primary">{study.clientName}</div>
+                      <div className="text-muted-foreground">{study.clientRole}</div>
+                    </div>
+                  </div>
+
+                  <Button variant="outline" className="w-full group hover:bg-primary hover:text-primary-foreground transition-colors">
+                    View Full Case Study
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </CardHeader>
+              </Card>
+            ))}
             </div>
           </div>
         </section>
@@ -253,6 +175,7 @@ const Portfolio = () => {
         </section>
       </main>
       <ChatBot />
+      <WhatsAppFloat />
     </div>
   );
 };
