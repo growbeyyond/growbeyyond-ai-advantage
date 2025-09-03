@@ -114,27 +114,28 @@ const About = () => {
             </h1>
             
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
-              A team of AI researchers, marketing strategists, and data scientists united by one mission: 
-              to help businesses achieve extraordinary growth through the power of artificial intelligence.
+              A team of AI marketing specialists dedicated to transforming healthcare businesses through 
+              innovative digital strategies. Currently serving 7+ clients with a major focus on the health sector, 
+              delivering exceptional results since 2024.
             </p>
 
             {/* Company Stats */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">300+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">7+</div>
+                <div className="text-muted-foreground text-sm">Active Clients</div>
+              </div>
+              <div className="glass-card p-6 rounded-2xl">
+                <div className="text-3xl font-bold gradient-text mb-2">15+</div>
                 <div className="text-muted-foreground text-sm">Successful Campaigns</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">₹12M+</div>
-                <div className="text-muted-foreground text-sm">Revenue Generated</div>
+                <div className="text-3xl font-bold gradient-text mb-2">Health</div>
+                <div className="text-muted-foreground text-sm">Sector Expertise</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">100+</div>
-                <div className="text-muted-foreground text-sm">AI Tools Mastered</div>
-              </div>
-              <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">97%</div>
-                <div className="text-muted-foreground text-sm">Client Satisfaction</div>
+                <div className="text-3xl font-bold gradient-text mb-2">2024</div>
+                <div className="text-muted-foreground text-sm">Year Founded</div>
               </div>
             </div>
           </div>

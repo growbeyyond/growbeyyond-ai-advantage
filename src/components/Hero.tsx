@@ -79,15 +79,15 @@ const Hero = () => {
             <div className="flex items-center justify-center mb-3">
               <Brain className="w-8 h-8 text-primary" />
             </div>
-            <div className="text-3xl font-bold gradient-text mb-2">200+</div>
-            <div className="text-muted-foreground">AI Tools Integrated</div>
+            <div className="text-3xl font-bold gradient-text mb-2">7+</div>
+            <div className="text-muted-foreground">Active Clients</div>
           </div>
           
           <div className="glass-card p-6 rounded-2xl shadow-premium">
             <div className="flex items-center justify-center mb-3">
               <TrendingUp className="w-8 h-8 text-secondary" />
             </div>
-            <div className="text-3xl font-bold gradient-text mb-2">500+</div>
+            <div className="text-3xl font-bold gradient-text mb-2">15+</div>
             <div className="text-muted-foreground">Successful Campaigns</div>
           </div>
           
@@ -95,8 +95,8 @@ const Hero = () => {
             <div className="flex items-center justify-center mb-3">
               <Sparkles className="w-8 h-8 text-accent" />
             </div>
-            <div className="text-3xl font-bold gradient-text mb-2">98%</div>
-            <div className="text-muted-foreground">Client Satisfaction</div>
+            <div className="text-3xl font-bold gradient-text mb-2">Health</div>
+            <div className="text-muted-foreground">Sector Expertise</div>
           </div>
         </div>
       </div>
