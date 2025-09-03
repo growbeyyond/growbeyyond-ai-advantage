@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, TrendingUp, DollarSign, Users, Calendar, Target, BarChart3, Zap, Award, CheckCircle } from "lucide-react";
-import { realCaseStudies, caseStudyStats } from "@/data/caseStudies";
+import { realCaseStudies } from "@/data/realCaseStudies";
 
 const Portfolio = () => {
 
@@ -34,27 +34,27 @@ const Portfolio = () => {
             </h1>
             
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover how we've helped businesses across industries achieve extraordinary growth 
-              through our cutting-edge AI marketing strategies and implementations.
+              Discover how we've helped healthcare professionals and businesses achieve extraordinary growth 
+              through our specialized AI marketing strategies, with proven expertise in the health sector.
             </p>
 
             {/* Overall Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
               <div className="glass-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.totalRevenue}</div>
-                <div className="text-sm text-muted-foreground">Revenue Generated</div>
+                <div className="text-3xl font-bold text-primary mb-2">7+</div>
+                <div className="text-sm text-muted-foreground">Active Clients</div>
               </div>
               <div className="glass-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.avgGrowth}</div>
+                <div className="text-3xl font-bold text-primary mb-2">350%+</div>
                 <div className="text-sm text-muted-foreground">Avg Growth Rate</div>
               </div>
               <div className="glass-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.clientsSaved}</div>
-                <div className="text-sm text-muted-foreground">Client Savings</div>
+                <div className="text-3xl font-bold text-primary mb-2">₹50L+</div>
+                <div className="text-sm text-muted-foreground">Client Revenue Impact</div>
               </div>
               <div className="glass-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{caseStudyStats.companiesTransformed}</div>
-                <div className="text-sm text-muted-foreground">Companies Transformed</div>
+                <div className="text-3xl font-bold text-primary mb-2">Health</div>
+                <div className="text-sm text-muted-foreground">Sector Expertise</div>
               </div>
             </div>
           </div>
@@ -74,20 +74,21 @@ const Portfolio = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {realCaseStudies.map((study, index) => (
-              <Card key={index} className={`glass-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group overflow-hidden border-primary/20`}>
+              <Card key={study.id} className={`glass-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group overflow-hidden border-primary/20`}>
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="outline" className="text-xs border-primary/20">
                       {study.industry}
                     </Badge>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      {study.timeline}
-                    </div>
+                    {study.featured && (
+                      <Badge variant="default" className="text-xs">
+                        Featured
+                      </Badge>
+                    )}
                   </div>
 
                   <CardTitle className="text-xl mb-3 leading-tight text-primary">
-                    {study.title}
+                    {study.clientName}
                   </CardTitle>
 
                   <div className="space-y-4 mb-6">
@@ -111,18 +112,17 @@ const Portfolio = () => {
                   <div className="space-y-4 mb-6">
                     <h4 className="font-semibold text-sm text-primary flex items-center gap-2">
                       <Award className="h-4 w-4" />
-                      Detailed Results
+                      Key Results
                     </h4>
                     <div className="grid grid-cols-1 gap-3">
-                      {study.metrics.map((metric, metricIndex) => (
-                        <div key={metricIndex} className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      {study.results.map((result, resultIndex) => (
+                        <div key={resultIndex} className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                           <div className="flex justify-between items-center mb-1">
-                            <span className="text-sm font-medium">{metric.label}</span>
-                            <span className="text-xs text-primary font-bold">+{metric.improvement}</span>
+                            <span className="text-sm font-medium">{result.metric}</span>
+                            <span className="text-xs text-primary font-bold">{result.improvement}</span>
                           </div>
-                          <div className="flex justify-between text-xs text-muted-foreground">
-                            <span>Before: {metric.before}</span>
-                            <span>After: {metric.after}</span>
+                          <div className="text-xs text-muted-foreground">
+                            <span>Timeframe: {result.timeframe}</span>
                           </div>
                         </div>
                       ))}
@@ -134,11 +134,24 @@ const Portfolio = () => {
                       <Users className="h-4 w-4" />
                       Client Testimonial
                     </h4>
-                    <p className="text-sm text-muted-foreground italic mb-3">"{study.testimonial}"</p>
+                    <p className="text-sm text-muted-foreground italic mb-3">"{study.testimonial.quote}"</p>
                     <div className="text-xs">
-                      <div className="font-semibold text-primary">{study.clientName}</div>
-                      <div className="text-muted-foreground">{study.clientRole}</div>
+                      <div className="font-semibold text-primary">{study.testimonial.author}</div>
+                      <div className="text-muted-foreground">{study.testimonial.position}</div>
                     </div>
+                  </div>
+
+                  <div className="flex gap-2 mb-4">
+                    {study.websiteUrl !== "#" && (
+                      <Button variant="outline" size="sm" className="flex-1">
+                        Website
+                      </Button>
+                    )}
+                    {study.instagramUrl && (
+                      <Button variant="outline" size="sm" className="flex-1">
+                        Instagram
+                      </Button>
+                    )}
                   </div>
 
                   <Button variant="outline" className="w-full group hover:bg-primary hover:text-primary-foreground transition-colors">

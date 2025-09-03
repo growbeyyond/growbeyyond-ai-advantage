@@ -87,8 +87,8 @@ const Hero = () => {
             <div className="flex items-center justify-center mb-3">
               <TrendingUp className="w-8 h-8 text-secondary" />
             </div>
-            <div className="text-3xl font-bold gradient-text mb-2">15+</div>
-            <div className="text-muted-foreground">Successful Campaigns</div>
+            <div className="text-3xl font-bold gradient-text mb-2">350%+</div>
+            <div className="text-muted-foreground">Average Growth</div>
           </div>
           
           <div className="glass-card p-6 rounded-2xl shadow-premium">
