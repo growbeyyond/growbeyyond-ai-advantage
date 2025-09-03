@@ -132,19 +132,19 @@ const ContactSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Mail className="w-5 h-5 text-primary mr-3" />
-                    <span>hello@growbeyyond.com</span>
+                    <span>directors@growbeyyond.in</span>
                   </div>
                   <div className="flex items-center">
                     <Phone className="w-5 h-5 text-primary mr-3" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+91 8886435551, +91 6301361053</span>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="w-5 h-5 text-primary mr-3" />
-                    <span>San Francisco, CA</span>
+                    <span>Hyderabad, India</span>
                   </div>
                   <div className="flex items-center">
                     <Clock className="w-5 h-5 text-primary mr-3" />
-                    <span>Mon-Fri: 9AM-6PM PST</span>
+                    <span>Mon-Fri: 9AM-6PM IST</span>
                   </div>
                 </div>
               </CardContent>

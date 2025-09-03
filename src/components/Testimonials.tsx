@@ -5,24 +5,24 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "CEO, TechFlow Solutions",
-      avatar: "SC",
-      content: "Grow Beyyond's AI-powered marketing increased our conversion rates by 340% in just 3 months. Their predictive analytics saved us hundreds of hours of manual optimization.",
+      name: "Rajesh Sharma",
+      role: "CEO, TechVista Solutions",
+      avatar: "RS",
+      content: "Grow Beyyond transformed our digital presence completely. Their AI-driven strategies increased our online conversions by 285% in just 4 months. The level of insight and automation they provided was truly game-changing for our Hyderabad-based startup.",
       rating: 5
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Marketing Director, InnovateCorp",
-      avatar: "MR",
-      content: "The automation tools they implemented transformed our entire marketing operation. We now reach the right customers at exactly the right moment with personalized messaging.",
+      name: "Priya Mehta",
+      role: "Marketing Director, InnovateIndia Corp",
+      avatar: "PM",
+      content: "The team's expertise in AI marketing is unparalleled. We saw immediate improvements in our lead quality and customer engagement rates. Their solutions helped us scale from local to national market presence.",
       rating: 5
     },
     {
-      name: "Emily Watson",
-      role: "Founder, GreenTech Startup",
-      avatar: "EW",
-      content: "From zero to million-dollar revenue in 8 months. Their AI strategies identified opportunities we never knew existed. Absolutely game-changing partnership.",
+      name: "Arjun Patel",
+      role: "Founder, EcoTech Startup",
+      avatar: "AP",
+      content: "From startup to market leader in 6 months. Their AI strategies identified opportunities we never knew existed and helped us scale rapidly. Working with Maniteja and Rashi's team was the best business decision we made.",
       rating: 5
     }
   ];

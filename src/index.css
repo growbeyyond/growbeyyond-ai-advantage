@@ -20,20 +20,20 @@
     --card-glass: 240 10% 15%;
     --card-foreground: 0 0% 98%;
 
-    /* Premium Primary Brand Colors - Electric Purple/Blue */
-    --primary: 258 90% 66%;
-    --primary-glow: 258 100% 75%;
-    --primary-dark: 258 85% 45%;
+    /* Premium Primary Brand Colors - Nature Green */
+    --primary: 142 76% 36%;
+    --primary-glow: 142 76% 46%;
+    --primary-dark: 142 76% 26%;
     --primary-foreground: 0 0% 98%;
 
-    /* Premium Secondary - Cyan Accent */
-    --secondary: 189 94% 60%;
-    --secondary-glow: 189 100% 70%;
+    /* Premium Secondary - Technology Blue */
+    --secondary: 200 98% 39%;
+    --secondary-glow: 200 98% 49%;
     --secondary-foreground: 240 10% 3.9%;
 
-    /* Premium Accent - Electric Pink */
-    --accent: 320 85% 70%;
-    --accent-glow: 320 100% 80%;
+    /* Premium Accent - Innovation Orange */
+    --accent: 25 95% 53%;
+    --accent-glow: 25 95% 63%;
     --accent-foreground: 240 10% 3.9%;
 
     /* Premium Gradients */
@@ -55,7 +55,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 6% 20%;
     --input: 240 6% 10%;
-    --ring: 258 90% 66%;
+    --ring: 142 76% 36%;
 
     --radius: 0.75rem;
 

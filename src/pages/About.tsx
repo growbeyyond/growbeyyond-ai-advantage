@@ -20,45 +20,17 @@ import {
 const About = () => {
   const teamMembers = [
     {
-      name: "Sarah Chen",
-      role: "CEO & AI Strategy Director",
-      bio: "Former Google AI researcher with 10+ years in machine learning applications for marketing.",
-      avatar: "SC",
+      name: "Maniteja Chowdary",
+      role: "Founder & Managing Director",
+      bio: "Visionary entrepreneur with 8+ years in digital marketing and AI innovation. Led multiple startups to successful exits through data-driven growth strategies. Expert in scaling businesses using cutting-edge AI technologies and strategic marketing automation.",
+      avatar: "MC",
       social: { linkedin: "#", twitter: "#" }
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Head of AI Implementation",
-      bio: "Ex-Tesla AI engineer specializing in predictive analytics and automation systems.",
-      avatar: "MR",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Emily Watson",
-      role: "Creative AI Director",
-      bio: "Award-winning creative director who pioneered AI-human collaborative design processes.",
-      avatar: "EW",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "David Kim",
-      role: "Data Science Lead",
-      bio: "PhD in Computer Science, previously led data teams at Netflix and Spotify.",
-      avatar: "DK",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Jennifer Liu",
-      role: "Customer Success Director",
-      bio: "15+ years helping Fortune 500 companies achieve marketing transformation goals.",
-      avatar: "JL",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Michael Brown",
-      role: "AI Ethics Advisor",
-      bio: "Philosopher and technologist ensuring responsible AI implementation in marketing.",
-      avatar: "MB",
+      name: "Rashi Gupta",
+      role: "Managing Director",
+      bio: "Strategic marketing expert with 10+ years driving growth for Fortune 500 companies. Specializes in AI-powered customer acquisition and retention strategies. Proven track record of implementing marketing automation systems that deliver 300%+ ROI improvements.",
+      avatar: "RG",
       social: { linkedin: "#", twitter: "#" }
     }
   ];
@@ -151,19 +123,19 @@ const About = () => {
             {/* Company Stats */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">500+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">300+</div>
                 <div className="text-muted-foreground text-sm">Successful Campaigns</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">$24M+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">₹12M+</div>
                 <div className="text-muted-foreground text-sm">Revenue Generated</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">50+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">100+</div>
                 <div className="text-muted-foreground text-sm">AI Tools Mastered</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">98%</div>
+                <div className="text-3xl font-bold gradient-text mb-2">97%</div>
                 <div className="text-muted-foreground text-sm">Client Satisfaction</div>
               </div>
             </div>

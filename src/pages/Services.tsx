@@ -22,7 +22,7 @@ const Services = () => {
       title: "AI Strategy & Consulting",
       description: "Transform your marketing with AI-powered strategies tailored to your business goals.",
       features: ["Market Analysis", "Competitor Intelligence", "Growth Forecasting", "ROI Optimization"],
-      price: "Custom",
+      pricing: "Contact for Quote",
       color: "text-primary"
     },
     {
@@ -30,7 +30,7 @@ const Services = () => {
       title: "Smart SEO & SEM",
       description: "Dominate search results with AI-optimized campaigns that adapt in real-time.",
       features: ["Keyword Intelligence", "Content Optimization", "Technical SEO", "Paid Search Management"],
-      price: "From $2,500/mo",
+      pricing: "Contact for Quote",
       color: "text-secondary"
     },
     {
@@ -38,7 +38,7 @@ const Services = () => {
       title: "Social Media Automation",
       description: "Engage your audience with AI-driven content and community management.",
       features: ["Content Creation", "Posting Automation", "Engagement Analytics", "Influencer Matching"],
-      price: "From $1,800/mo",
+      pricing: "Contact for Quote",
       color: "text-accent"
     },
     {
@@ -46,7 +46,7 @@ const Services = () => {
       title: "Predictive Analytics",
       description: "Make data-driven decisions with advanced forecasting and insights.",
       features: ["Customer Journey Mapping", "Conversion Prediction", "Trend Analysis", "Performance Forecasting"],
-      price: "From $3,000/mo",
+      pricing: "Contact for Quote",
       color: "text-primary"
     },
     {
@@ -54,7 +54,7 @@ const Services = () => {
       title: "Smart Email Marketing",
       description: "Personalized email campaigns that convert with AI-powered optimization.",
       features: ["Dynamic Segmentation", "Content Personalization", "Send Time Optimization", "A/B Testing"],
-      price: "From $1,200/mo",
+      pricing: "Contact for Quote",
       color: "text-secondary"
     },
     {
@@ -62,7 +62,7 @@ const Services = () => {
       title: "AI Content Creation",
       description: "Scale your content production with AI-generated videos, images, and copy.",
       features: ["Video Generation", "Image Creation", "Copy Writing", "Brand Voice Training"],
-      price: "From $2,000/mo",
+      pricing: "Contact for Quote",
       color: "text-accent"
     }
   ];
@@ -115,7 +115,7 @@ const Services = () => {
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
                       <service.icon className={`w-10 h-10 ${service.color}`} />
-                      <Badge variant="outline">{service.price}</Badge>
+                      <Badge variant="outline">{service.pricing}</Badge>
                     </div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
                   </CardHeader>

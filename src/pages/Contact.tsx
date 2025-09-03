@@ -18,14 +18,14 @@ const Contact = () => {
       icon: Phone,
       title: "Phone",
       description: "Speak directly with our AI marketing experts",
-      details: "+1 (555) 123-4567",
-      availability: "Mon-Fri, 9AM-6PM PST"
+      details: "+91 8886435551, +91 6301361053",
+      availability: "Mon-Fri, 9AM-6PM IST"
     },
     {
       icon: Mail,
       title: "Email",
       description: "Get detailed responses within 2 hours",
-      details: "hello@growbeyyond.com",
+      details: "directors@growbeyyond.in",
       availability: "24/7 response guarantee"
     },
     {
@@ -33,7 +33,7 @@ const Contact = () => {
       title: "Live Chat",
       description: "Instant support for quick questions",
       details: "Chat widget on website",
-      availability: "Mon-Fri, 8AM-8PM PST"
+      availability: "Mon-Fri, 8AM-8PM IST"
     },
     {
       icon: Calendar,
@@ -46,22 +46,10 @@ const Contact = () => {
 
   const officeLocations = [
     {
-      city: "San Francisco",
-      address: "123 Innovation Street, Suite 500",
-      state: "California 94107",
+      city: "Hyderabad",
+      address: "Grow Beyyond Headquarters",
+      state: "Telangana, India",
       type: "Headquarters"
-    },
-    {
-      city: "New York",
-      address: "456 Marketing Avenue, Floor 12",
-      state: "New York 10001",
-      type: "East Coast Office"
-    },
-    {
-      city: "Austin",
-      address: "789 Tech Boulevard, Building C",
-      state: "Texas 78701",
-      type: "Growth Hub"
     }
   ];
 
