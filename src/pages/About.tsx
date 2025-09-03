@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -126,8 +127,8 @@ const About = () => {
                 <div className="text-muted-foreground text-sm">Active Clients</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">15+</div>
-                <div className="text-muted-foreground text-sm">Successful Campaigns</div>
+                <div className="text-3xl font-bold gradient-text mb-2">₹50L+</div>
+                <div className="text-muted-foreground text-sm">Client Revenue Impact</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
                 <div className="text-3xl font-bold gradient-text mb-2">Health</div>
@@ -158,11 +159,11 @@ const About = () => {
                   researchers and marketing veterans, saw an opportunity to bridge this gap.
                 </p>
                 
-                <p className="text-lg leading-relaxed mb-6">
-                  In 2019, we started with a bold vision - to make AI-powered marketing accessible to 
-                  businesses of all sizes. We believed that every company, from startups to enterprises, 
-                  deserved access to the same cutting-edge technology that the tech giants used.
-                </p>
+          <p className="text-lg leading-relaxed mb-6">
+            In 2024, we started with a bold vision - to make AI-powered marketing accessible to 
+            businesses of all sizes. We believed that every company, from startups to enterprises, 
+            deserved access to the same cutting-edge technology that the tech giants used.
+          </p>
                 
                 <p className="text-lg leading-relaxed">
                   Today, we're proud to have helped hundreds of businesses achieve extraordinary growth 
@@ -299,6 +300,7 @@ const About = () => {
         </section>
       </main>
       <ChatBot />
+      <WhatsAppFloat />
     </div>
   );
 };

@@ -5,24 +5,24 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Rajesh Sharma",
-      role: "CEO, TechVista Solutions",
-      avatar: "RS",
-      content: "Grow Beyyond transformed our digital presence completely. Their AI-driven strategies increased our online conversions by 285% in just 4 months. The level of insight and automation they provided was truly game-changing for our Hyderabad-based startup.",
+      name: "Dr. Sindhu Pericherla",
+      role: "Medical Oncologist, American Oncology Institute",
+      avatar: "DS",
+      content: "Grow Beyyond transformed how I connect with patients online. Their AI-driven approach helped me build trust and reach more cancer patients who needed care. The results exceeded my expectations.",
       rating: 5
     },
     {
-      name: "Priya Mehta",
-      role: "Marketing Director, InnovateIndia Corp",
-      avatar: "PM",
-      content: "The team's expertise in AI marketing is unparalleled. We saw immediate improvements in our lead quality and customer engagement rates. Their solutions helped us scale from local to national market presence.",
+      name: "Dr. Namratha Sai Reddy",
+      role: "Radiation Oncologist, ECMO Certified",
+      avatar: "NR",
+      content: "Their AI marketing approach helped me reach more cancer patients in need. The personalized campaigns and digital strategy significantly increased my practice visibility.",
       rating: 5
     },
     {
-      name: "Arjun Patel",
-      role: "Founder, EcoTech Startup",
-      avatar: "AP",
-      content: "From startup to market leader in 6 months. Their AI strategies identified opportunities we never knew existed and helped us scale rapidly. Working with Maniteja and Rashi's team was the best business decision we made.",
+      name: "Dr. Pradeep Kumar",
+      role: "Chief Podiatrist, Footryx Clinics",
+      avatar: "PK",
+      content: "Grow Beyyond's AI marketing helped us explain our complex gait analysis technology to patients. Our bookings tripled and we're now the leading podiatry clinic in Hyderabad.",
       rating: 5
     }
   ];
