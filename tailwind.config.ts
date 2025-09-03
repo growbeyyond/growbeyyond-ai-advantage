@@ -18,19 +18,34 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
+				background: {
+					DEFAULT: 'hsl(var(--background))',
+					secondary: 'hsl(var(--background-secondary))',
+					muted: 'hsl(var(--background-muted))',
+				},
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
+					glow: 'hsl(var(--primary-glow))',
+					dark: 'hsl(var(--primary-dark))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
+					glow: 'hsl(var(--secondary-glow))',
 					foreground: 'hsl(var(--secondary-foreground))'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					glow: 'hsl(var(--accent-glow))',
+					foreground: 'hsl(var(--accent-foreground))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -40,16 +55,14 @@ export default {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
 				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
+					secondary: 'hsl(var(--card-secondary))',
+					glass: 'hsl(var(--card-glass))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				sidebar: {
