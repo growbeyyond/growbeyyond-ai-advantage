@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ServicesOverview from "@/components/ServicesOverview";
+import ROICalculator from "@/components/ROICalculator";
 import RealCaseStudies from "@/components/RealCaseStudies";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <main className="pt-16">
         <Hero onOpenAuditPopup={openAuditPopup} />
         <ServicesOverview />
+        <ROICalculator onOpenAuditPopup={openAuditPopup} />
         <RealCaseStudies />
         <Testimonials />
         <ContactSection />
