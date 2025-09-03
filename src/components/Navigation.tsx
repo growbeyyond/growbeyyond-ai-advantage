@@ -3,7 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const Navigation = () => {
+interface NavigationProps {
+  onOpenAuditPopup?: () => void;
+}
+
+const Navigation = ({ onOpenAuditPopup }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -54,7 +58,7 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden sm:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={onOpenAuditPopup}>
               Get Free Audit
             </Button>
             <Button size="sm" className="shadow-premium">
@@ -91,7 +95,7 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="pt-4 space-y-2">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full" onClick={onOpenAuditPopup}>
                 Get Free Audit
               </Button>
               <Button className="w-full shadow-premium">

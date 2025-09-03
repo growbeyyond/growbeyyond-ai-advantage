@@ -7,20 +7,23 @@ import ContactSection from "@/components/ContactSection";
 import ChatBot from "@/components/ChatBot";
 import WelcomePopup from "@/components/WelcomePopup";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { useAuditPopup } from "@/hooks/useAuditPopup";
 
 const Index = () => {
+  const { isOpen, openAuditPopup, closeAuditPopup } = useAuditPopup();
+
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation onOpenAuditPopup={openAuditPopup} />
       <main className="pt-16">
-        <Hero />
+        <Hero onOpenAuditPopup={openAuditPopup} />
         <ServicesOverview />
         <RealCaseStudies />
         <Testimonials />
         <ContactSection />
       </main>
       <ChatBot />
-      <WelcomePopup />
+      {isOpen && <WelcomePopup onClose={closeAuditPopup} />}
       <WhatsAppFloat />
     </div>
   );

@@ -7,7 +7,11 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
-const WelcomePopup = () => {
+interface WelcomePopupProps {
+  onClose?: () => void;
+}
+
+const WelcomePopup = ({ onClose }: WelcomePopupProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -18,19 +22,28 @@ const WelcomePopup = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const hasSeenPopup = localStorage.getItem("hasSeenWelcomePopup");
+    if (onClose) {
+      // If onClose is provided, it means this popup is being controlled externally
+      setIsOpen(true);
+    } else {
+      // Original auto-popup behavior
+      const hasSeenPopup = localStorage.getItem('hasSeenWelcomePopup');
       if (!hasSeenPopup) {
-        setIsOpen(true);
+        const timer = setTimeout(() => {
+          setIsOpen(true);
+        }, 2000);
+        return () => clearTimeout(timer);
       }
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
+    }
+  }, [onClose]);
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("hasSeenWelcomePopup", "true");
+    if (onClose) {
+      onClose();
+    } else {
+      localStorage.setItem('hasSeenWelcomePopup', 'true');
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

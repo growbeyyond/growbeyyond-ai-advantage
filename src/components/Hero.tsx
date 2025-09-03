@@ -2,7 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, TrendingUp, Zap, Brain, Bot, Cpu, Network } from "lucide-react";
 
-const Hero = () => {
+interface HeroProps {
+  onOpenAuditPopup?: () => void;
+}
+
+const Hero = ({ onOpenAuditPopup }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -67,6 +71,7 @@ const Hero = () => {
           <Button 
             variant="outline" 
             size="lg" 
+            onClick={onOpenAuditPopup}
             className="text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 border-2 border-primary/70 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] hover:scale-105 transition-all duration-300 font-semibold w-full sm:w-auto"
           >
             ⚡ Get Free AI Audit
