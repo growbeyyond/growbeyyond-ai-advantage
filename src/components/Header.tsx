@@ -23,15 +23,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div 
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="cursor-pointer group"
             onClick={() => navigate("/")}
           >
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-glow group-hover:scale-105 transition-transform duration-300">
               <Sparkles className="w-6 h-6 text-white" />
-            </div>
-            <div className="font-black text-xl">
-              <span className="text-primary">Grow</span>
-              <span className="text-foreground"> Beyyond</span>
             </div>
           </div>
 
