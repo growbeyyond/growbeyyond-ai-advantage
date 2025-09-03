@@ -42,11 +42,8 @@ const Hero = () => {
 
         {/* Main Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
-          <span className="block text-primary drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)] animate-pulse">
-            Grow Beyond
-          </span>
           <span className="block text-6xl md:text-8xl lg:text-9xl font-black bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-gradient bg-[length:200%_200%] drop-shadow-[0_0_50px_hsl(var(--primary)/0.8)]">
-            EXPECTATIONS
+            GROW BEYOND
           </span>
           <span className="block text-3xl md:text-5xl lg:text-6xl font-bold text-foreground/90 mt-4">
             with <span className="text-primary font-black">AI-Powered Marketing</span>
