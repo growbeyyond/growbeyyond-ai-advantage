@@ -69,7 +69,7 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-24 right-6 w-96 h-96 z-50 glass-card border-border/50 shadow-intense">
+        <Card className="fixed bottom-24 right-6 w-[calc(100vw-2rem)] max-w-96 h-[70vh] max-h-96 z-50 glass-card border-border/50 shadow-intense sm:w-96 sm:h-96">
           <CardHeader className="border-b border-border/50">
             <CardTitle className="flex items-center text-lg">
               <Bot className="w-5 h-5 text-primary mr-2" />
@@ -77,7 +77,7 @@ const ChatBot = () => {
             </CardTitle>
           </CardHeader>
           
-          <CardContent className="p-0 flex flex-col h-80">
+          <CardContent className="p-0 flex flex-col h-[calc(70vh-5rem)] max-h-80 sm:h-80">
             {/* Messages Area */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.map((message) => (
