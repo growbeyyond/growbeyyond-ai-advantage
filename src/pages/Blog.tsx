@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import ChatBot from "@/components/ChatBot";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,80 +14,418 @@ import {
 } from "lucide-react";
 
 const Blog = () => {
-  const featuredPost = {
-    title: "The Complete Guide to AI Marketing Automation in 2024",
-    excerpt: "Discover how leading brands are using AI to automate their marketing workflows and achieve 300% better ROI. This comprehensive guide covers everything from setup to optimization.",
-    author: "Sarah Chen",
-    date: "March 15, 2024",
-    readTime: "12 min read",
-    category: "AI Marketing",
-    image: "bg-gradient-to-br from-primary to-secondary"
-  };
-
   const blogPosts = [
     {
-      title: "How AI Predictive Analytics Transformed Our Client's Lead Generation",
-      excerpt: "A deep dive into how we increased lead quality by 450% using machine learning algorithms.",
-      author: "Marcus Rodriguez",
+      title: "AI-Powered Customer Segmentation: The Ultimate Guide",
+      excerpt: "Learn how machine learning algorithms can identify high-value customer segments with 95% accuracy, leading to 300% better conversion rates.",
+      author: "Maniteja Chowdary",
+      date: "March 15, 2024",
+      readTime: "12 min read",
+      category: "AI Marketing",
+      featured: true
+    },
+    {
+      title: "ChatGPT for Marketing: 25 Proven Use Cases",
+      excerpt: "Discover practical ways to leverage ChatGPT for content creation, customer service, and campaign optimization.",
+      author: "Rashi Gupta",
       date: "March 12, 2024",
-      readTime: "8 min read",
-      category: "Case Study",
-      image: "bg-gradient-to-br from-blue-500 to-purple-600"
-    },
-    {
-      title: "The Future of Email Marketing: AI-Powered Personalization",
-      excerpt: "Why generic email campaigns are dead and how AI creates personalized experiences at scale.",
-      author: "Emily Watson",
-      date: "March 10, 2024",
-      readTime: "6 min read",
-      category: "Email Marketing",
-      image: "bg-gradient-to-br from-green-500 to-teal-600"
-    },
-    {
-      title: "5 AI Tools Every Digital Marketer Should Know About",
-      excerpt: "From content creation to analytics, these AI tools will revolutionize your marketing workflow.",
-      author: "David Kim",
-      date: "March 8, 2024",
       readTime: "10 min read",
-      category: "Tools & Technology",
-      image: "bg-gradient-to-br from-orange-500 to-red-600"
+      category: "AI Tools"
     },
     {
-      title: "ROI Analysis: Traditional vs AI-Powered Marketing Campaigns",
-      excerpt: "Real data comparing the performance of traditional marketing against AI-enhanced strategies.",
-      author: "Jennifer Liu",
+      title: "Predictive Analytics in Digital Marketing: A Complete Framework",
+      excerpt: "Build predictive models that forecast customer behavior and optimize marketing spend with data-driven insights.",
+      author: "Maniteja Chowdary",
+      date: "March 10, 2024",
+      readTime: "15 min read",
+      category: "Analytics"
+    },
+    {
+      title: "AI Content Creation: Tools and Techniques for Scale",
+      excerpt: "Master AI-powered content generation for blogs, social media, and video marketing at unprecedented scale.",
+      author: "Rashi Gupta",
+      date: "March 8, 2024",
+      readTime: "8 min read",
+      category: "Content Marketing"
+    },
+    {
+      title: "Marketing Automation with Machine Learning: Best Practices",
+      excerpt: "Implement intelligent automation workflows that adapt and optimize based on real-time performance data.",
+      author: "Maniteja Chowdary",
       date: "March 5, 2024",
-      readTime: "7 min read",
-      category: "Analytics",
-      image: "bg-gradient-to-br from-cyan-500 to-blue-600"
+      readTime: "11 min read",
+      category: "Automation"
     },
     {
-      title: "Building Customer Trust with AI: A Ethical Framework",
-      excerpt: "How to implement AI marketing while maintaining transparency and building customer trust.",
-      author: "Michael Brown",
+      title: "AI-Driven Social Media Strategy: Beyond Basic Scheduling",
+      excerpt: "Use artificial intelligence to optimize posting times, content types, and audience engagement strategies.",
+      author: "Rashi Gupta",
       date: "March 3, 2024",
       readTime: "9 min read",
-      category: "Ethics & Strategy",
-      image: "bg-gradient-to-br from-pink-500 to-purple-600"
+      category: "Social Media"
     },
     {
-      title: "Voice Search Optimization in the Age of AI",
-      excerpt: "Preparing your content strategy for the voice-first future with AI optimization techniques.",
-      author: "Lisa Chang",
+      title: "Computer Vision in E-commerce Marketing: Visual AI Applications",
+      excerpt: "Leverage computer vision for product recommendations, visual search, and automated image optimization.",
+      author: "Maniteja Chowdary",
       date: "March 1, 2024",
+      readTime: "13 min read",
+      category: "E-commerce"
+    },
+    {
+      title: "Natural Language Processing for Customer Insights",
+      excerpt: "Extract valuable insights from customer feedback, reviews, and social mentions using NLP techniques.",
+      author: "Rashi Gupta",
+      date: "February 28, 2024",
+      readTime: "10 min read",
+      category: "Customer Intelligence"
+    },
+    {
+      title: "AI Email Marketing: Personalization at Hyper-Scale",
+      excerpt: "Create individually personalized email experiences for thousands of customers using AI algorithms.",
+      author: "Maniteja Chowdary",
+      date: "February 25, 2024",
+      readTime: "7 min read",
+      category: "Email Marketing"
+    },
+    {
+      title: "Recommendation Engines: Building AI-Powered Product Suggestions",
+      excerpt: "Design and implement recommendation systems that boost sales and improve customer experience.",
+      author: "Rashi Gupta",
+      date: "February 22, 2024",
+      readTime: "14 min read",
+      category: "AI Systems"
+    },
+    {
+      title: "Conversion Rate Optimization with AI: Data-Driven Approaches",
+      excerpt: "Use machine learning to identify conversion bottlenecks and automatically optimize landing pages.",
+      author: "Maniteja Chowdary",
+      date: "February 20, 2024",
+      readTime: "12 min read",
+      category: "CRO"
+    },
+    {
+      title: "AI Voice Marketing: The Next Frontier in Customer Engagement",
+      excerpt: "Explore voice AI applications for marketing, from voice search optimization to AI voice assistants.",
+      author: "Rashi Gupta",
+      date: "February 18, 2024",
+      readTime: "9 min read",
+      category: "Voice Technology"
+    },
+    {
+      title: "Dynamic Pricing Strategies with AI: Maximize Revenue Intelligence",
+      excerpt: "Implement AI-driven pricing models that adapt to market conditions and customer behavior in real-time.",
+      author: "Maniteja Chowdary",
+      date: "February 15, 2024",
+      readTime: "11 min read",
+      category: "Pricing Strategy"
+    },
+    {
+      title: "AI-Powered A/B Testing: Beyond Traditional Split Testing",
+      excerpt: "Use machine learning to run more sophisticated experiments and discover winning variations faster.",
+      author: "Rashi Gupta",
+      date: "February 12, 2024",
       readTime: "8 min read",
-      category: "SEO & Voice",
-      image: "bg-gradient-to-br from-indigo-500 to-purple-600"
+      category: "Testing & Optimization"
+    },
+    {
+      title: "Sentiment Analysis for Brand Monitoring: AI Social Listening",
+      excerpt: "Monitor brand sentiment across digital channels using advanced AI sentiment analysis techniques.",
+      author: "Maniteja Chowdary",
+      date: "February 10, 2024",
+      readTime: "10 min read",
+      category: "Brand Intelligence"
+    },
+    {
+      title: "AI Lead Scoring: Qualify Prospects with Machine Learning",
+      excerpt: "Build intelligent lead scoring models that identify sales-ready prospects with unprecedented accuracy.",
+      author: "Rashi Gupta",
+      date: "February 8, 2024",
+      readTime: "13 min read",
+      category: "Lead Generation"
+    },
+    {
+      title: "Programmatic Advertising with AI: Smarter Ad Buying",
+      excerpt: "Optimize programmatic ad campaigns using AI for better targeting, bidding, and creative optimization.",
+      author: "Maniteja Chowdary",
+      date: "February 5, 2024",
+      readTime: "12 min read",
+      category: "Paid Advertising"
+    },
+    {
+      title: "AI Chat Marketing: Conversational AI for Customer Acquisition",
+      excerpt: "Design AI chatbots that convert visitors into customers through intelligent conversation flows.",
+      author: "Rashi Gupta",
+      date: "February 3, 2024",
+      readTime: "9 min read",
+      category: "Conversational AI"
+    },
+    {
+      title: "Predictive Customer Lifetime Value with Machine Learning",
+      excerpt: "Calculate and optimize customer lifetime value using advanced machine learning algorithms.",
+      author: "Maniteja Chowdary",
+      date: "February 1, 2024",
+      readTime: "14 min read",
+      category: "Customer Analytics"
+    },
+    {
+      title: "AI Image Recognition for Marketing: Visual Intelligence Applications",
+      excerpt: "Use computer vision for logo detection, visual content analysis, and automated image tagging.",
+      author: "Rashi Gupta",
+      date: "January 29, 2024",
+      readTime: "11 min read",
+      category: "Visual AI"
+    },
+    {
+      title: "Real-Time Marketing with AI: Instant Campaign Optimization",
+      excerpt: "Implement real-time AI systems that adjust marketing campaigns based on live performance data.",
+      author: "Maniteja Chowdary",
+      date: "January 26, 2024",
+      readTime: "10 min read",
+      category: "Real-Time Marketing"
+    },
+    {
+      title: "AI-Driven Influencer Marketing: Find Perfect Brand Ambassadors",
+      excerpt: "Use AI to identify, evaluate, and collaborate with influencers who align with your brand values.",
+      author: "Rashi Gupta",
+      date: "January 24, 2024",
+      readTime: "8 min read",
+      category: "Influencer Marketing"
+    },
+    {
+      title: "Market Research Automation with AI: Intelligent Data Collection",
+      excerpt: "Automate market research processes using AI for faster insights and competitive intelligence.",
+      author: "Maniteja Chowdary",
+      date: "January 22, 2024",
+      readTime: "12 min read",
+      category: "Market Research"
+    },
+    {
+      title: "AI Content Personalization: Individual Customer Experiences",
+      excerpt: "Create personalized content experiences for each visitor using AI-powered content engines.",
+      author: "Rashi Gupta",
+      date: "January 19, 2024",
+      readTime: "9 min read",
+      category: "Personalization"
+    },
+    {
+      title: "Fraud Detection in Digital Marketing: AI Security Solutions",
+      excerpt: "Protect your marketing spend from fraud using machine learning detection algorithms.",
+      author: "Maniteja Chowdary",
+      date: "January 17, 2024",
+      readTime: "11 min read",
+      category: "Security & Fraud"
+    },
+    {
+      title: "AI Video Marketing: Automated Video Creation and Optimization",
+      excerpt: "Generate and optimize video content at scale using artificial intelligence technologies.",
+      author: "Rashi Gupta",
+      date: "January 15, 2024",
+      readTime: "13 min read",
+      category: "Video Marketing"
+    },
+    {
+      title: "Customer Journey Mapping with AI: Intelligent Path Analysis",
+      excerpt: "Use AI to analyze and optimize customer journeys across all touchpoints and channels.",
+      author: "Maniteja Chowdary",
+      date: "January 12, 2024",
+      readTime: "10 min read",
+      category: "Customer Journey"
+    },
+    {
+      title: "AI-Powered SEO: Next-Generation Search Optimization",
+      excerpt: "Optimize for search engines using AI tools for keyword research, content optimization, and ranking prediction.",
+      author: "Rashi Gupta",
+      date: "January 10, 2024",
+      readTime: "14 min read",
+      category: "SEO & Search"
+    },
+    {
+      title: "Attribution Modeling with Machine Learning: Multi-Touch Analytics",
+      excerpt: "Build sophisticated attribution models that accurately measure marketing channel performance.",
+      author: "Maniteja Chowdary",
+      date: "January 8, 2024",
+      readTime: "12 min read",
+      category: "Attribution & Analytics"
+    },
+    {
+      title: "AI Crisis Management: Automated Brand Protection Strategies",
+      excerpt: "Implement AI systems that detect and respond to brand crises before they escalate.",
+      author: "Rashi Gupta",
+      date: "January 5, 2024",
+      readTime: "9 min read",
+      category: "Crisis Management"
+    },
+    {
+      title: "Competitive Intelligence with AI: Stay Ahead of the Market",
+      excerpt: "Use artificial intelligence to monitor competitors and identify market opportunities in real-time.",
+      author: "Maniteja Chowdary",
+      date: "January 3, 2024",
+      readTime: "11 min read",
+      category: "Competitive Intelligence"
+    },
+    {
+      title: "AI-Driven Mobile Marketing: Smartphone-First Strategies",
+      excerpt: "Optimize mobile marketing campaigns using AI for location targeting, app marketing, and mobile personalization.",
+      author: "Rashi Gupta",
+      date: "January 1, 2024",
+      readTime: "10 min read",
+      category: "Mobile Marketing"
+    },
+    {
+      title: "Marketing Mix Modeling with AI: Optimize Budget Allocation",
+      excerpt: "Use advanced analytics to determine optimal marketing spend allocation across channels and campaigns.",
+      author: "Maniteja Chowdary",
+      date: "December 29, 2023",
+      readTime: "13 min read",
+      category: "Budget Optimization"
+    },
+    {
+      title: "AI Retail Marketing: Intelligent Shopping Experiences",
+      excerpt: "Transform retail marketing with AI-powered recommendations, inventory optimization, and customer insights.",
+      author: "Rashi Gupta",
+      date: "December 27, 2023",
+      readTime: "12 min read",
+      category: "Retail Marketing"
+    },
+    {
+      title: "Neurosymbolic AI in Marketing: The Future of Intelligent Campaigns",
+      excerpt: "Explore the cutting-edge fusion of neural networks and symbolic reasoning for next-level marketing AI.",
+      author: "Maniteja Chowdary",
+      date: "December 25, 2023",
+      readTime: "15 min read",
+      category: "Advanced AI"
+    },
+    {
+      title: "AI Ethics in Marketing: Responsible AI Implementation",
+      excerpt: "Build ethical AI marketing systems that respect privacy, avoid bias, and maintain customer trust.",
+      author: "Rashi Gupta",
+      date: "December 22, 2023",
+      readTime: "11 min read",
+      category: "AI Ethics"
+    },
+    {
+      title: "Cross-Channel Marketing Orchestration with AI",
+      excerpt: "Coordinate marketing messages across all channels using AI for consistent, optimized customer experiences.",
+      author: "Maniteja Chowdary",
+      date: "December 20, 2023",
+      readTime: "10 min read",
+      category: "Omnichannel"
+    },
+    {
+      title: "AI Trend Prediction: Forecast Market Changes Before They Happen",
+      excerpt: "Use machine learning to predict marketing trends and consumer behavior shifts before your competitors.",
+      author: "Rashi Gupta",
+      date: "December 18, 2023",
+      readTime: "9 min read",
+      category: "Trend Analysis"
+    },
+    {
+      title: "Marketing Automation Workflows: AI-Powered Customer Nurturing",
+      excerpt: "Design intelligent automation workflows that adapt to customer behavior and optimize engagement.",
+      author: "Maniteja Chowdary",
+      date: "December 15, 2023",
+      readTime: "12 min read",
+      category: "Marketing Automation"
+    },
+    {
+      title: "AI-Enhanced Creative Development: Art Meets Algorithm",
+      excerpt: "Combine human creativity with AI assistance to produce more effective marketing creative at scale.",
+      author: "Rashi Gupta",
+      date: "December 13, 2023",
+      readTime: "8 min read",
+      category: "Creative AI"
+    },
+    {
+      title: "Voice Search Optimization: AI-Powered Voice Marketing Strategies",
+      excerpt: "Optimize your content and campaigns for voice search using natural language processing and AI insights.",
+      author: "Maniteja Chowdary",
+      date: "December 10, 2023",
+      readTime: "11 min read",
+      category: "Voice Search"
+    },
+    {
+      title: "AI Marketing ROI Measurement: Advanced Attribution & Analytics",
+      excerpt: "Measure true marketing ROI using AI-powered attribution models and advanced analytics frameworks.",
+      author: "Rashi Gupta",
+      date: "December 8, 2023",
+      readTime: "13 min read",
+      category: "ROI & Measurement"
+    },
+    {
+      title: "Quantum Computing in Marketing: The Next Technology Frontier",
+      excerpt: "Explore how quantum computing will revolutionize marketing analytics, optimization, and customer modeling.",
+      author: "Maniteja Chowdary",
+      date: "December 5, 2023",
+      readTime: "14 min read",
+      category: "Emerging Technology"
+    },
+    {
+      title: "AI-Powered Crisis Communication: Automated Response Systems",
+      excerpt: "Build AI systems that detect, analyze, and respond to communication crises in real-time.",
+      author: "Rashi Gupta",
+      date: "December 3, 2023",
+      readTime: "10 min read",
+      category: "Crisis Communication"
+    },
+    {
+      title: "Behavioral Economics & AI: Psychology-Driven Marketing",
+      excerpt: "Apply behavioral economics principles with AI to create more persuasive and effective marketing campaigns.",
+      author: "Maniteja Chowdary",
+      date: "December 1, 2023",
+      readTime: "12 min read",
+      category: "Behavioral Marketing"
+    },
+    {
+      title: "AI Content Strategy: Data-Driven Content Planning and Creation",
+      excerpt: "Develop content strategies using AI insights for topic research, content gaps, and performance prediction.",
+      author: "Rashi Gupta",
+      date: "November 28, 2023",
+      readTime: "9 min read",
+      category: "Content Strategy"
+    },
+    {
+      title: "Marketing Performance Optimization with Reinforcement Learning",
+      excerpt: "Use reinforcement learning algorithms to continuously optimize marketing campaigns for maximum performance.",
+      author: "Maniteja Chowdary",
+      date: "November 26, 2023",
+      readTime: "15 min read",
+      category: "Advanced Optimization"
+    },
+    {
+      title: "AI-Driven Customer Success: Proactive Retention Strategies",
+      excerpt: "Implement AI systems that predict customer churn and automatically trigger retention campaigns.",
+      author: "Rashi Gupta",
+      date: "November 24, 2023",
+      readTime: "11 min read",
+      category: "Customer Success"
+    },
+    {
+      title: "Augmented Reality Marketing with AI: Immersive Brand Experiences",
+      excerpt: "Combine AR technology with AI to create personalized, immersive marketing experiences.",
+      author: "Maniteja Chowdary",
+      date: "November 22, 2023",
+      readTime: "10 min read",
+      category: "AR & Immersive Tech"
+    },
+    {
+      title: "AI Marketing Stack Integration: Building Unified Technology Ecosystems",
+      excerpt: "Integrate AI tools across your marketing technology stack for seamless data flow and optimization.",
+      author: "Rashi Gupta",
+      date: "November 20, 2023",
+      readTime: "13 min read",
+      category: "MarTech Integration"
     }
   ];
 
-  const categories = [
-    { name: "AI Marketing", count: 24, icon: Brain },
-    { name: "Case Studies", count: 18, icon: TrendingUp },
-    { name: "Tools & Technology", count: 15, icon: Zap },
-    { name: "Strategy", count: 12, icon: Brain },
-    { name: "Analytics", count: 10, icon: TrendingUp }
-  ];
+  const categories = ["All", "AI Marketing", "Analytics", "Content Marketing", "Automation", "AI Tools"];
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredPosts = selectedCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
+
+  const featuredPost = blogPosts[0];
 
   return (
     <div className="min-h-screen bg-background">
@@ -96,179 +436,163 @@ const Blog = () => {
         <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-background via-background-secondary to-background-muted">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
           </div>
           
-          <div className="relative z-10 container mx-auto px-4 text-center">
-            <Badge variant="secondary" className="mb-6 px-4 py-2">
-              <Brain className="w-4 h-4 mr-2" />
-              AI Marketing Insights
-            </Badge>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Thought Leadership</span>
-              <br />
-              in AI Marketing
-            </h1>
-            
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Stay ahead of the curve with our latest insights, case studies, and expert analysis 
-              on AI-powered marketing strategies that drive real results.
-            </p>
+          <div className="relative z-10 container mx-auto px-4">
+            <div className="text-center mb-16">
+              <Badge variant="secondary" className="mb-6 px-4 py-2">
+                <Brain className="w-4 h-4 mr-2" />
+                AI Marketing Intelligence Hub
+              </Badge>
+              
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                <span className="gradient-text">AI Marketing</span>
+                <br />
+                Insights & Strategies
+              </h1>
+              
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Stay ahead of the curve with cutting-edge AI marketing strategies, tools, and insights 
+                from industry experts. Transform your marketing with artificial intelligence.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Featured Post */}
+        {featuredPost && (
+          <section className="py-16">
+            <div className="container mx-auto px-4">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold mb-4">Featured Article</h2>
+              </div>
+              
+              <Card className="glass-card border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-premium">
+                <div className="md:flex">
+                  <div className="md:w-1/2 bg-gradient-to-br from-primary/20 to-primary/5 p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      <Brain className="w-16 h-16 text-primary mx-auto mb-4" />
+                      <Badge variant="outline" className="border-primary/50">Featured</Badge>
+                    </div>
+                  </div>
+                  <CardContent className="md:w-1/2 p-8">
+                    <Badge variant="secondary" className="mb-4">{featuredPost.category}</Badge>
+                    <h3 className="text-2xl font-bold mb-4 gradient-text">{featuredPost.title}</h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{featuredPost.excerpt}</p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <User className="w-4 h-4 mr-2" />
+                        <span className="mr-4">{featuredPost.author}</span>
+                        <Clock className="w-4 h-4 mr-2" />
+                        <span className="mr-4">{featuredPost.readTime}</span>
+                        <span>{featuredPost.date}</span>
+                      </div>
+                      <Button variant="outline" className="border-primary/50 hover:border-primary">
+                        Read More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </div>
+              </Card>
+            </div>
+          </section>
+        )}
+
+        {/* Category Filter */}
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap gap-4 justify-center">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(category)}
+                  className={selectedCategory === category ? "" : "border-border/50 hover:border-primary/50"}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Posts Grid */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="gradient-text">Featured</span> Article
-              </h2>
-            </div>
-
-            <Card className="glass-card border-border/50 hover:shadow-intense transition-all duration-500 max-w-4xl mx-auto">
-              <CardContent className="p-0">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className={`${featuredPost.image} h-64 lg:h-auto relative`}>
-                    <div className="absolute inset-0 bg-black/30"></div>
-                    <div className="absolute top-4 left-4">
-                      <Badge variant="secondary">{featuredPost.category}</Badge>
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.slice(1).map((post, index) => (
+                <Card 
+                  key={index}
+                  className="glass-card border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-premium hover:-translate-y-1 group cursor-pointer"
+                >
+                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 flex items-center justify-center h-48">
+                    <TrendingUp className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-4 hover:text-primary transition-colors cursor-pointer">
-                      {featuredPost.title}
+                  
+                  <CardContent className="p-6">
+                    <Badge variant="outline" className="mb-3 border-primary/30">{post.category}</Badge>
+                    <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                      {post.title}
                     </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {featuredPost.excerpt}
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                      {post.excerpt}
                     </p>
-                    <div className="flex items-center text-sm text-muted-foreground mb-6">
-                      <User className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{featuredPost.author}</span>
-                      <Clock className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{featuredPost.readTime}</span>
-                      <span>{featuredPost.date}</span>
-                    </div>
-                    <Button className="group">
-                      Read Full Article
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Blog Grid */}
-        <section className="py-16 bg-gradient-to-b from-background to-background-secondary">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-              {/* Main Content */}
-              <div className="lg:col-span-3">
-                <h2 className="text-2xl font-bold mb-8">Latest Articles</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {blogPosts.map((post, index) => (
-                    <Card 
-                      key={index}
-                      className="glass-card border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-premium hover:-translate-y-1 group cursor-pointer"
-                    >
-                      <CardContent className="p-0">
-                        <div className={`h-48 ${post.image} relative`}>
-                          <div className="absolute inset-0 bg-black/30"></div>
-                          <div className="absolute top-4 left-4">
-                            <Badge variant="secondary" className="text-xs">
-                              {post.category}
-                            </Badge>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
-                            {post.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                            {post.excerpt}
-                          </p>
-                          <div className="flex items-center text-xs text-muted-foreground">
-                            <User className="w-3 h-3 mr-1" />
-                            <span className="mr-3">{post.author}</span>
-                            <Clock className="w-3 h-3 mr-1" />
-                            <span className="mr-3">{post.readTime}</span>
-                            <span>{post.date}</span>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              {/* Sidebar */}
-              <div className="lg:col-span-1">
-                <div className="space-y-8">
-                  {/* Categories */}
-                  <Card className="glass-card border-border/50">
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold mb-4">Categories</h3>
-                      <div className="space-y-3">
-                        {categories.map((category, index) => (
-                          <div 
-                            key={index} 
-                            className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 cursor-pointer transition-colors"
-                          >
-                            <div className="flex items-center">
-                              <category.icon className="w-4 h-4 text-primary mr-2" />
-                              <span className="text-sm">{category.name}</span>
-                            </div>
-                            <span className="text-xs text-muted-foreground">{category.count}</span>
-                          </div>
-                        ))}
+                    
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <div className="flex items-center">
+                        <User className="w-3 h-3 mr-1" />
+                        <span>{post.author}</span>
                       </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Newsletter Signup */}
-                  <Card className="glass-card border-border/50">
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold mb-4 gradient-text">
-                        Stay Updated
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Get the latest AI marketing insights delivered to your inbox weekly.
-                      </p>
-                      <Button className="w-full">
-                        Subscribe Now
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+                      <div className="flex items-center">
+                        <Clock className="w-3 h-3 mr-1" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-4 pt-4 border-t border-border/50">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-muted-foreground">{post.date}</span>
+                        <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground">
+                          Read More
+                          <ArrowRight className="ml-1 w-3 h-3" />
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-24">
+        {/* Newsletter CTA */}
+        <section className="py-16 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Want to <span className="gradient-text">Contribute</span> or Learn More?
+              Stay Updated with <span className="gradient-text">AI Marketing Trends</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Share your AI marketing insights with our community or get personalized 
-              advice for your business challenges.
+              Get the latest AI marketing insights, case studies, and strategies delivered to your inbox every week.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-premium">
-                Submit Guest Post
-              </Button>
-              <Button variant="outline" size="lg">
-                Get Expert Consultation
+            
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg bg-background-muted border border-border/50 focus:border-primary focus:outline-none"
+              />
+              <Button className="px-8">
+                Subscribe
+                <Zap className="ml-2 w-4 h-4" />
               </Button>
             </div>
           </div>
         </section>
       </main>
+      <ChatBot />
     </div>
   );
 };
