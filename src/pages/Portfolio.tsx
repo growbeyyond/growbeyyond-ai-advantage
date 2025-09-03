@@ -27,7 +27,7 @@ const Portfolio = () => {
               Proven Success Stories
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
               Real Results From
               <br />
               <span className="gradient-text">AI-Powered Campaigns</span>
@@ -168,7 +168,7 @@ const Portfolio = () => {
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               Ready to Write Your <span className="gradient-text">Success Story</span>?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

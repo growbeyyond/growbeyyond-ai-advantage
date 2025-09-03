@@ -52,7 +52,7 @@ const ContactSection = () => {
             <Sparkles className="w-4 h-4 mr-2" />
             Ready to Get Started?
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Let's <span className="gradient-text">Grow Together</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

@@ -108,7 +108,7 @@ const About = () => {
               Meet the Team Behind the AI Revolution
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
               We're <span className="gradient-text">Grow Beyyond</span>
               <br />
               The AI Marketing Pioneers
@@ -280,7 +280,7 @@ const About = () => {
         {/* CTA Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               Ready to <span className="gradient-text">Work Together</span>?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
