@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,11 +26,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent shadow-glow"></div>
-              <Sparkles className="absolute inset-0 w-4 h-4 m-auto text-primary-foreground animate-pulse" />
-            </div>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+              src="/lovable-uploads/3957b019-161b-40ff-aed4-84170e7306b4.png" 
+              alt="Grow Beyyond Logo" 
+              className="w-10 h-10 transition-transform duration-300 group-hover:scale-110"
+            />
             <span className="text-xl font-bold gradient-text">Grow Beyyond</span>
           </Link>
 

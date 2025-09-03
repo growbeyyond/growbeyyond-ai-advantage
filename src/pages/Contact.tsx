@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import ChatBot from "@/components/ChatBot";
 import ContactSection from "@/components/ContactSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -224,6 +225,7 @@ const Contact = () => {
           </div>
         </section>
       </main>
+      <ChatBot />
     </div>
   );
 };
