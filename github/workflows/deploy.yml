@@ -10,25 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Build Project
         run: npm run build
 
+      - name: Verify dist folder exists
+        run: ls -la ./dist || echo "❌ dist folder not found"
+
       - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /public_html/
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./dist/        # ✅ must exist + trailing slash
+          server-dir: /public_html/ # ✅ must end with /
+          dangerous-clean-slate: false
