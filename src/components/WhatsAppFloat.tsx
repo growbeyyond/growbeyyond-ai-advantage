@@ -11,11 +11,12 @@ const WhatsAppFloat = () => {
   return (
     <Button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-2xl hover:shadow-green-500/25 animate-bounce transition-all duration-300 group"
+      className="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-2xl hover:shadow-green-500/25 animate-bounce transition-all duration-300 group"
       size="icon"
     >
       <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
       <span className="sr-only">Contact on WhatsApp</span>
+    
     </Button>
   );
 };
