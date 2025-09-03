@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ContactSection from "@/components/ContactSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -226,6 +227,7 @@ const Contact = () => {
         </section>
       </main>
       <ChatBot />
+      <WhatsAppFloat />
     </div>
   );
 };
