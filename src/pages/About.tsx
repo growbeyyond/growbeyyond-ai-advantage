@@ -63,34 +63,29 @@ const About = () => {
 
   const milestones = [
     {
-      year: "2019",
+      year: "2024 Jan",
       title: "Company Founded",
-      description: "Started with a vision to democratize AI marketing for businesses of all sizes."
+      description: "Started Grow Beyyond with a vision to revolutionize AI marketing for businesses of all sizes."
     },
     {
-      year: "2020",
-      title: "First AI Platform",
-      description: "Launched our proprietary AI marketing automation platform."
+      year: "2024 Q2",
+      title: "First Client Success",
+      description: "Launched our AI marketing solutions and achieved remarkable results for our initial clients."
     },
     {
-      year: "2021",
-      title: "100 Clients Milestone",
-      description: "Reached 100 successful client transformations with an average 250% ROI increase."
+      year: "2024 Q3",
+      title: "Rapid Growth",
+      description: "Expanded our client base significantly with proven AI-driven marketing strategies."
     },
     {
-      year: "2022",
-      title: "AI Innovation Award",
-      description: "Recognized as 'AI Marketing Innovation of the Year' by MarTech Alliance."
+      year: "2024 Q4",
+      title: "Multiple Industries",
+      description: "Successfully served clients across various industries with tailored AI marketing solutions."
     },
     {
-      year: "2023",
-      title: "Global Expansion",
-      description: "Expanded operations to serve clients across North America, Europe, and Asia."
-    },
-    {
-      year: "2024",
-      title: "Next-Gen AI",
-      description: "Launched GPT-4 powered creative automation and predictive customer journey mapping."
+      year: "2025",
+      title: "Continued Excellence",
+      description: "Growing portfolio of satisfied clients with consistent results and innovative AI marketing approaches."
     }
   ];
 
