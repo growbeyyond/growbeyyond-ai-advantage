@@ -13,408 +13,466 @@ import {
   Zap
 } from "lucide-react";
 
+// Import blog images
+import aiSegmentationImg from "@/assets/blog-ai-segmentation.jpg";
+import chatgptMarketingImg from "@/assets/blog-chatgpt-marketing.jpg";
+import predictiveAnalyticsImg from "@/assets/blog-predictive-analytics.jpg";
+import aiContentImg from "@/assets/blog-ai-content.jpg";
+import automationImg from "@/assets/blog-automation.jpg";
+import socialAiImg from "@/assets/blog-social-ai.jpg";
+
 const Blog = () => {
   const blogPosts = [
     {
       title: "AI-Powered Customer Segmentation: The Ultimate Guide",
       excerpt: "Learn how machine learning algorithms can identify high-value customer segments with 95% accuracy, leading to 300% better conversion rates.",
       author: "Maniteja Chowdary",
-      date: "March 15, 2024",
+      date: "September 15, 2025",
       readTime: "12 min read",
       category: "AI Marketing",
-      featured: true
+      featured: true,
+      image: aiSegmentationImg
     },
     {
       title: "ChatGPT for Marketing: 25 Proven Use Cases",
       excerpt: "Discover practical ways to leverage ChatGPT for content creation, customer service, and campaign optimization.",
       author: "Rashi Gupta",
-      date: "March 12, 2024",
+      date: "September 12, 2025",
       readTime: "10 min read",
-      category: "AI Tools"
+      category: "AI Tools",
+      image: chatgptMarketingImg
     },
     {
       title: "Predictive Analytics in Digital Marketing: A Complete Framework",
       excerpt: "Build predictive models that forecast customer behavior and optimize marketing spend with data-driven insights.",
       author: "Maniteja Chowdary",
-      date: "March 10, 2024",
+      date: "September 10, 2025",
       readTime: "15 min read",
-      category: "Analytics"
+      category: "Analytics",
+      image: predictiveAnalyticsImg
     },
     {
       title: "AI Content Creation: Tools and Techniques for Scale",
       excerpt: "Master AI-powered content generation for blogs, social media, and video marketing at unprecedented scale.",
       author: "Rashi Gupta",
-      date: "March 8, 2024",
+      date: "September 8, 2025",
       readTime: "8 min read",
-      category: "Content Marketing"
+      category: "Content Marketing",
+      image: aiContentImg
     },
     {
       title: "Marketing Automation with Machine Learning: Best Practices",
       excerpt: "Implement intelligent automation workflows that adapt and optimize based on real-time performance data.",
       author: "Maniteja Chowdary",
-      date: "March 5, 2024",
+      date: "September 5, 2025",
       readTime: "11 min read",
-      category: "Automation"
+      category: "Automation",
+      image: automationImg
     },
     {
       title: "AI-Driven Social Media Strategy: Beyond Basic Scheduling",
       excerpt: "Use artificial intelligence to optimize posting times, content types, and audience engagement strategies.",
       author: "Rashi Gupta",
-      date: "March 3, 2024",
+      date: "September 3, 2025",
       readTime: "9 min read",
-      category: "Social Media"
+      category: "Social Media",
+      image: socialAiImg
     },
     {
       title: "Computer Vision in E-commerce Marketing: Visual AI Applications",
       excerpt: "Leverage computer vision for product recommendations, visual search, and automated image optimization.",
       author: "Maniteja Chowdary",
-      date: "March 1, 2024",
+      date: "September 1, 2025",
       readTime: "13 min read",
-      category: "E-commerce"
+      category: "E-commerce",
+      image: aiSegmentationImg
     },
     {
       title: "Natural Language Processing for Customer Insights",
       excerpt: "Extract valuable insights from customer feedback, reviews, and social mentions using NLP techniques.",
       author: "Rashi Gupta",
-      date: "February 28, 2024",
+      date: "August 28, 2025",
       readTime: "10 min read",
-      category: "Customer Intelligence"
+      category: "Customer Intelligence",
+      image: chatgptMarketingImg
     },
     {
       title: "AI Email Marketing: Personalization at Hyper-Scale",
       excerpt: "Create individually personalized email experiences for thousands of customers using AI algorithms.",
       author: "Maniteja Chowdary",
-      date: "February 25, 2024",
+      date: "August 25, 2025",
       readTime: "7 min read",
-      category: "Email Marketing"
+      category: "Email Marketing",
+      image: predictiveAnalyticsImg
     },
     {
       title: "Recommendation Engines: Building AI-Powered Product Suggestions",
       excerpt: "Design and implement recommendation systems that boost sales and improve customer experience.",
       author: "Rashi Gupta",
-      date: "February 22, 2024",
+      date: "August 22, 2025",
       readTime: "14 min read",
-      category: "AI Systems"
+      category: "AI Systems",
+      image: aiContentImg
     },
     {
       title: "Conversion Rate Optimization with AI: Data-Driven Approaches",
       excerpt: "Use machine learning to identify conversion bottlenecks and automatically optimize landing pages.",
       author: "Maniteja Chowdary",
-      date: "February 20, 2024",
+      date: "August 20, 2025",
       readTime: "12 min read",
-      category: "CRO"
+      category: "CRO",
+      image: automationImg
     },
     {
       title: "AI Voice Marketing: The Next Frontier in Customer Engagement",
       excerpt: "Explore voice AI applications for marketing, from voice search optimization to AI voice assistants.",
       author: "Rashi Gupta",
-      date: "February 18, 2024",
+      date: "August 18, 2025",
       readTime: "9 min read",
-      category: "Voice Technology"
+      category: "Voice Technology",
+      image: socialAiImg
     },
     {
       title: "Dynamic Pricing Strategies with AI: Maximize Revenue Intelligence",
       excerpt: "Implement AI-driven pricing models that adapt to market conditions and customer behavior in real-time.",
       author: "Maniteja Chowdary",
-      date: "February 15, 2024",
+      date: "August 15, 2025",
       readTime: "11 min read",
-      category: "Pricing Strategy"
+      category: "Pricing Strategy",
+      image: aiSegmentationImg
     },
     {
       title: "AI-Powered A/B Testing: Beyond Traditional Split Testing",
       excerpt: "Use machine learning to run more sophisticated experiments and discover winning variations faster.",
       author: "Rashi Gupta",
-      date: "February 12, 2024",
+      date: "August 12, 2025",
       readTime: "8 min read",
-      category: "Testing & Optimization"
+      category: "Testing & Optimization",
+      image: chatgptMarketingImg
     },
     {
       title: "Sentiment Analysis for Brand Monitoring: AI Social Listening",
       excerpt: "Monitor brand sentiment across digital channels using advanced AI sentiment analysis techniques.",
       author: "Maniteja Chowdary",
-      date: "February 10, 2024",
+      date: "August 10, 2025",
       readTime: "10 min read",
-      category: "Brand Intelligence"
+      category: "Brand Intelligence",
+      image: predictiveAnalyticsImg
     },
     {
       title: "AI Lead Scoring: Qualify Prospects with Machine Learning",
       excerpt: "Build intelligent lead scoring models that identify sales-ready prospects with unprecedented accuracy.",
       author: "Rashi Gupta",
-      date: "February 8, 2024",
+      date: "August 8, 2025",
       readTime: "13 min read",
-      category: "Lead Generation"
+      category: "Lead Generation",
+      image: aiContentImg
     },
     {
       title: "Programmatic Advertising with AI: Smarter Ad Buying",
       excerpt: "Optimize programmatic ad campaigns using AI for better targeting, bidding, and creative optimization.",
       author: "Maniteja Chowdary",
-      date: "February 5, 2024",
+      date: "August 5, 2025",
       readTime: "12 min read",
-      category: "Paid Advertising"
+      category: "Paid Advertising",
+      image: automationImg
     },
     {
       title: "AI Chat Marketing: Conversational AI for Customer Acquisition",
       excerpt: "Design AI chatbots that convert visitors into customers through intelligent conversation flows.",
       author: "Rashi Gupta",
-      date: "February 3, 2024",
+      date: "August 3, 2025",
       readTime: "9 min read",
-      category: "Conversational AI"
+      category: "Conversational AI",
+      image: socialAiImg
     },
     {
       title: "Predictive Customer Lifetime Value with Machine Learning",
       excerpt: "Calculate and optimize customer lifetime value using advanced machine learning algorithms.",
       author: "Maniteja Chowdary",
-      date: "February 1, 2024",
+      date: "August 1, 2025",
       readTime: "14 min read",
-      category: "Customer Analytics"
+      category: "Customer Analytics",
+      image: aiSegmentationImg
     },
     {
       title: "AI Image Recognition for Marketing: Visual Intelligence Applications",
       excerpt: "Use computer vision for logo detection, visual content analysis, and automated image tagging.",
       author: "Rashi Gupta",
-      date: "January 29, 2024",
+      date: "July 29, 2025",
       readTime: "11 min read",
-      category: "Visual AI"
+      category: "Visual AI",
+      image: chatgptMarketingImg
     },
     {
       title: "Real-Time Marketing with AI: Instant Campaign Optimization",
       excerpt: "Implement real-time AI systems that adjust marketing campaigns based on live performance data.",
       author: "Maniteja Chowdary",
-      date: "January 26, 2024",
+      date: "July 26, 2025",
       readTime: "10 min read",
-      category: "Real-Time Marketing"
+      category: "Real-Time Marketing",
+      image: predictiveAnalyticsImg
     },
     {
       title: "AI-Driven Influencer Marketing: Find Perfect Brand Ambassadors",
       excerpt: "Use AI to identify, evaluate, and collaborate with influencers who align with your brand values.",
       author: "Rashi Gupta",
-      date: "January 24, 2024",
+      date: "July 24, 2025",
       readTime: "8 min read",
-      category: "Influencer Marketing"
+      category: "Influencer Marketing",
+      image: aiContentImg
     },
     {
       title: "Market Research Automation with AI: Intelligent Data Collection",
       excerpt: "Automate market research processes using AI for faster insights and competitive intelligence.",
       author: "Maniteja Chowdary",
-      date: "January 22, 2024",
+      date: "July 22, 2025",
       readTime: "12 min read",
-      category: "Market Research"
+      category: "Market Research",
+      image: automationImg
     },
     {
       title: "AI Content Personalization: Individual Customer Experiences",
       excerpt: "Create personalized content experiences for each visitor using AI-powered content engines.",
       author: "Rashi Gupta",
-      date: "January 19, 2024",
+      date: "July 19, 2025",
       readTime: "9 min read",
-      category: "Personalization"
+      category: "Personalization",
+      image: socialAiImg
     },
     {
       title: "Fraud Detection in Digital Marketing: AI Security Solutions",
       excerpt: "Protect your marketing spend from fraud using machine learning detection algorithms.",
       author: "Maniteja Chowdary",
-      date: "January 17, 2024",
+      date: "July 17, 2025",
       readTime: "11 min read",
-      category: "Security & Fraud"
+      category: "Security & Fraud",
+      image: aiSegmentationImg
     },
     {
       title: "AI Video Marketing: Automated Video Creation and Optimization",
       excerpt: "Generate and optimize video content at scale using artificial intelligence technologies.",
       author: "Rashi Gupta",
-      date: "January 15, 2024",
+      date: "July 15, 2025",
       readTime: "13 min read",
-      category: "Video Marketing"
+      category: "Video Marketing",
+      image: chatgptMarketingImg
     },
     {
       title: "Customer Journey Mapping with AI: Intelligent Path Analysis",
       excerpt: "Use AI to analyze and optimize customer journeys across all touchpoints and channels.",
       author: "Maniteja Chowdary",
-      date: "January 12, 2024",
+      date: "July 12, 2025",
       readTime: "10 min read",
-      category: "Customer Journey"
+      category: "Customer Journey",
+      image: predictiveAnalyticsImg
     },
     {
       title: "AI-Powered SEO: Next-Generation Search Optimization",
       excerpt: "Optimize for search engines using AI tools for keyword research, content optimization, and ranking prediction.",
       author: "Rashi Gupta",
-      date: "January 10, 2024",
+      date: "July 10, 2025",
       readTime: "14 min read",
-      category: "SEO & Search"
+      category: "SEO & Search",
+      image: aiContentImg
     },
     {
       title: "Attribution Modeling with Machine Learning: Multi-Touch Analytics",
       excerpt: "Build sophisticated attribution models that accurately measure marketing channel performance.",
       author: "Maniteja Chowdary",
-      date: "January 8, 2024",
+      date: "July 8, 2025",
       readTime: "12 min read",
-      category: "Attribution & Analytics"
+      category: "Attribution & Analytics",
+      image: automationImg
     },
     {
       title: "AI Crisis Management: Automated Brand Protection Strategies",
       excerpt: "Implement AI systems that detect and respond to brand crises before they escalate.",
       author: "Rashi Gupta",
-      date: "January 5, 2024",
+      date: "July 5, 2025",
       readTime: "9 min read",
-      category: "Crisis Management"
+      category: "Crisis Management",
+      image: socialAiImg
     },
     {
       title: "Competitive Intelligence with AI: Stay Ahead of the Market",
       excerpt: "Use artificial intelligence to monitor competitors and identify market opportunities in real-time.",
       author: "Maniteja Chowdary",
-      date: "January 3, 2024",
+      date: "July 3, 2025",
       readTime: "11 min read",
-      category: "Competitive Intelligence"
+      category: "Competitive Intelligence",
+      image: aiSegmentationImg
     },
     {
       title: "AI-Driven Mobile Marketing: Smartphone-First Strategies",
       excerpt: "Optimize mobile marketing campaigns using AI for location targeting, app marketing, and mobile personalization.",
       author: "Rashi Gupta",
-      date: "January 1, 2024",
+      date: "July 1, 2025",
       readTime: "10 min read",
-      category: "Mobile Marketing"
+      category: "Mobile Marketing",
+      image: chatgptMarketingImg
     },
     {
       title: "Marketing Mix Modeling with AI: Optimize Budget Allocation",
       excerpt: "Use advanced analytics to determine optimal marketing spend allocation across channels and campaigns.",
       author: "Maniteja Chowdary",
-      date: "December 29, 2023",
+      date: "June 29, 2025",
       readTime: "13 min read",
-      category: "Budget Optimization"
+      category: "Budget Optimization",
+      image: predictiveAnalyticsImg
     },
     {
       title: "AI Retail Marketing: Intelligent Shopping Experiences",
       excerpt: "Transform retail marketing with AI-powered recommendations, inventory optimization, and customer insights.",
       author: "Rashi Gupta",
-      date: "December 27, 2023",
+      date: "June 27, 2025",
       readTime: "12 min read",
-      category: "Retail Marketing"
+      category: "Retail Marketing",
+      image: aiContentImg
     },
     {
       title: "Neurosymbolic AI in Marketing: The Future of Intelligent Campaigns",
       excerpt: "Explore the cutting-edge fusion of neural networks and symbolic reasoning for next-level marketing AI.",
       author: "Maniteja Chowdary",
-      date: "December 25, 2023",
+      date: "June 25, 2025",
       readTime: "15 min read",
-      category: "Advanced AI"
+      category: "Advanced AI",
+      image: automationImg
     },
     {
       title: "AI Ethics in Marketing: Responsible AI Implementation",
       excerpt: "Build ethical AI marketing systems that respect privacy, avoid bias, and maintain customer trust.",
       author: "Rashi Gupta",
-      date: "December 22, 2023",
+      date: "June 22, 2025",
       readTime: "11 min read",
-      category: "AI Ethics"
+      category: "AI Ethics",
+      image: socialAiImg
     },
     {
       title: "Cross-Channel Marketing Orchestration with AI",
       excerpt: "Coordinate marketing messages across all channels using AI for consistent, optimized customer experiences.",
       author: "Maniteja Chowdary",
-      date: "December 20, 2023",
+      date: "June 20, 2025",
       readTime: "10 min read",
-      category: "Omnichannel"
+      category: "Omnichannel",
+      image: aiSegmentationImg
     },
     {
       title: "AI Trend Prediction: Forecast Market Changes Before They Happen",
       excerpt: "Use machine learning to predict marketing trends and consumer behavior shifts before your competitors.",
       author: "Rashi Gupta",
-      date: "December 18, 2023",
+      date: "June 18, 2025",
       readTime: "9 min read",
-      category: "Trend Analysis"
+      category: "Trend Analysis",
+      image: chatgptMarketingImg
     },
     {
       title: "Marketing Automation Workflows: AI-Powered Customer Nurturing",
       excerpt: "Design intelligent automation workflows that adapt to customer behavior and optimize engagement.",
       author: "Maniteja Chowdary",
-      date: "December 15, 2023",
+      date: "June 15, 2025",
       readTime: "12 min read",
-      category: "Marketing Automation"
+      category: "Marketing Automation",
+      image: predictiveAnalyticsImg
     },
     {
       title: "AI-Enhanced Creative Development: Art Meets Algorithm",
       excerpt: "Combine human creativity with AI assistance to produce more effective marketing creative at scale.",
       author: "Rashi Gupta",
-      date: "December 13, 2023",
+      date: "June 13, 2025",
       readTime: "8 min read",
-      category: "Creative AI"
+      category: "Creative AI",
+      image: aiContentImg
     },
     {
       title: "Voice Search Optimization: AI-Powered Voice Marketing Strategies",
       excerpt: "Optimize your content and campaigns for voice search using natural language processing and AI insights.",
       author: "Maniteja Chowdary",
-      date: "December 10, 2023",
+      date: "June 10, 2025",
       readTime: "11 min read",
-      category: "Voice Search"
+      category: "Voice Search",
+      image: automationImg
     },
     {
       title: "AI Marketing ROI Measurement: Advanced Attribution & Analytics",
       excerpt: "Measure true marketing ROI using AI-powered attribution models and advanced analytics frameworks.",
       author: "Rashi Gupta",
-      date: "December 8, 2023",
+      date: "June 8, 2025",
       readTime: "13 min read",
-      category: "ROI & Measurement"
+      category: "ROI & Measurement",
+      image: socialAiImg
     },
     {
       title: "Quantum Computing in Marketing: The Next Technology Frontier",
       excerpt: "Explore how quantum computing will revolutionize marketing analytics, optimization, and customer modeling.",
       author: "Maniteja Chowdary",
-      date: "December 5, 2023",
+      date: "June 5, 2025",
       readTime: "14 min read",
-      category: "Emerging Technology"
+      category: "Emerging Technology",
+      image: aiSegmentationImg
     },
     {
       title: "AI-Powered Crisis Communication: Automated Response Systems",
       excerpt: "Build AI systems that detect, analyze, and respond to communication crises in real-time.",
       author: "Rashi Gupta",
-      date: "December 3, 2023",
+      date: "June 3, 2025",
       readTime: "10 min read",
-      category: "Crisis Communication"
+      category: "Crisis Communication",
+      image: chatgptMarketingImg
     },
     {
       title: "Behavioral Economics & AI: Psychology-Driven Marketing",
       excerpt: "Apply behavioral economics principles with AI to create more persuasive and effective marketing campaigns.",
       author: "Maniteja Chowdary",
-      date: "December 1, 2023",
+      date: "June 1, 2025",
       readTime: "12 min read",
-      category: "Behavioral Marketing"
+      category: "Behavioral Marketing",
+      image: predictiveAnalyticsImg
     },
     {
       title: "AI Content Strategy: Data-Driven Content Planning and Creation",
       excerpt: "Develop content strategies using AI insights for topic research, content gaps, and performance prediction.",
       author: "Rashi Gupta",
-      date: "November 28, 2023",
+      date: "May 28, 2025",
       readTime: "9 min read",
-      category: "Content Strategy"
+      category: "Content Strategy",
+      image: aiContentImg
     },
     {
       title: "Marketing Performance Optimization with Reinforcement Learning",
       excerpt: "Use reinforcement learning algorithms to continuously optimize marketing campaigns for maximum performance.",
       author: "Maniteja Chowdary",
-      date: "November 26, 2023",
+      date: "May 26, 2025",
       readTime: "15 min read",
-      category: "Advanced Optimization"
+      category: "Advanced Optimization",
+      image: automationImg
     },
     {
       title: "AI-Driven Customer Success: Proactive Retention Strategies",
       excerpt: "Implement AI systems that predict customer churn and automatically trigger retention campaigns.",
       author: "Rashi Gupta",
-      date: "November 24, 2023",
+      date: "May 24, 2025",
       readTime: "11 min read",
-      category: "Customer Success"
+      category: "Customer Success",
+      image: socialAiImg
     },
     {
       title: "Augmented Reality Marketing with AI: Immersive Brand Experiences",
       excerpt: "Combine AR technology with AI to create personalized, immersive marketing experiences.",
       author: "Maniteja Chowdary",
-      date: "November 22, 2023",
+      date: "December 22, 2024",
       readTime: "10 min read",
-      category: "AR & Immersive Tech"
+      category: "AR & Immersive Tech",
+      image: aiSegmentationImg
     },
     {
       title: "AI Marketing Stack Integration: Building Unified Technology Ecosystems",
       excerpt: "Integrate AI tools across your marketing technology stack for seamless data flow and optimization.",
       author: "Rashi Gupta",
-      date: "November 20, 2023",
+      date: "December 20, 2024",
       readTime: "13 min read",
-      category: "MarTech Integration"
+      category: "MarTech Integration",
+      image: chatgptMarketingImg
     }
   ];
 
@@ -470,11 +528,21 @@ const Blog = () => {
               
               <Card className="glass-card border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-premium">
                 <div className="md:flex">
-                  <div className="md:w-1/2 bg-gradient-to-br from-primary/20 to-primary/5 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                      <Brain className="w-16 h-16 text-primary mx-auto mb-4" />
-                      <Badge variant="outline" className="border-primary/50">Featured</Badge>
-                    </div>
+                  <div className="md:w-1/2 h-64 overflow-hidden">
+                    {featuredPost.image ? (
+                      <img 
+                        src={featuredPost.image} 
+                        alt={featuredPost.title} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-8 flex items-center justify-center h-full">
+                        <div className="text-center">
+                          <Brain className="w-16 h-16 text-primary mx-auto mb-4" />
+                          <Badge variant="outline" className="border-primary/50">Featured</Badge>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <CardContent className="md:w-1/2 p-8">
                     <Badge variant="secondary" className="mb-4">{featuredPost.category}</Badge>
@@ -528,8 +596,18 @@ const Blog = () => {
                   key={index}
                   className="glass-card border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-premium hover:-translate-y-1 group cursor-pointer"
                 >
-                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 flex items-center justify-center h-48">
-                    <TrendingUp className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  <div className="h-48 overflow-hidden">
+                    {post.image ? (
+                      <img 
+                        src={post.image} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 flex items-center justify-center h-full">
+                        <TrendingUp className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                    )}
                   </div>
                   
                   <CardContent className="p-6">
