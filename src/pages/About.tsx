@@ -3,7 +3,7 @@ import ChatBot from "@/components/ChatBot";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
   Brain, 
   Target, 
@@ -25,6 +25,7 @@ const About = () => {
       role: "Founder & Managing Director",
       bio: "Visionary entrepreneur with 8+ years in digital marketing and AI innovation. Led multiple startups to successful exits through data-driven growth strategies. Expert in scaling businesses using cutting-edge AI technologies and strategic marketing automation.",
       avatar: "MC",
+      image: "/lovable-uploads/888f5573-713f-426e-96c1-ab83c3a30e47.png",
       social: { linkedin: "#", twitter: "#" }
     },
     {
@@ -32,6 +33,7 @@ const About = () => {
       role: "Managing Director",
       bio: "Strategic marketing expert with 10+ years driving growth for Fortune 500 companies. Specializes in AI-powered customer acquisition and retention strategies. Proven track record of implementing marketing automation systems that deliver 300%+ ROI improvements.",
       avatar: "RG",
+      image: "/lovable-uploads/e4cbad91-4568-4a6b-a2d1-127d4b7644ca.png",
       social: { linkedin: "#", twitter: "#" }
     }
   ];
@@ -223,6 +225,7 @@ const About = () => {
                 >
                   <CardContent className="p-8 text-center">
                     <Avatar className="w-20 h-20 mx-auto mb-4">
+                      {member.image && <AvatarImage src={member.image} alt={member.name} />}
                       <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-primary-foreground font-semibold text-lg">
                         {member.avatar}
                       </AvatarFallback>
