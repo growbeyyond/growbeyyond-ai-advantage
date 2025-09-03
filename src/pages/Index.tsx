@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ServicesOverview from "@/components/ServicesOverview";
 import RealCaseStudies from "@/components/RealCaseStudies";
@@ -11,7 +11,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Navigation />
       <main className="pt-16">
         <Hero />
         <ServicesOverview />

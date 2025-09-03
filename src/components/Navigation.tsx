@@ -36,7 +36,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden sm:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -53,7 +53,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden sm:flex items-center space-x-4">
             <Button variant="outline" size="sm">
               Get Free Audit
             </Button>
@@ -65,7 +65,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="sm:hidden p-2 rounded-lg hover:bg-muted transition-colors"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -74,7 +74,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-border/50 glass-card">
+        <div className="sm:hidden border-t border-border/50 glass-card">
           <div className="container mx-auto px-4 py-4 space-y-4">
             {navItems.map((item) => (
               <Link
