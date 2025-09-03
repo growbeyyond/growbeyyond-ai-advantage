@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div 
-            className="cursor-pointer group"
+            className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => navigate("/")}
           >
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-glow group-hover:scale-105 transition-transform duration-300">
