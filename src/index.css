@@ -36,11 +36,11 @@
     --accent-glow: 24 100% 60%;
     --accent-foreground: 0 0% 100%;
 
-    /* Simplified Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(185 100% 45%), hsl(185 100% 55%));
-    --gradient-hero: linear-gradient(135deg, hsl(185 100% 45%), hsl(185 100% 55%));
+    /* Dynamic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(185 100% 45%), hsl(185 100% 65%), hsl(185 100% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(185 100% 35%), hsl(185 100% 55%), hsl(185 100% 35%));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 15% / 0.8), hsl(0 0% 5% / 0.4));
-    --gradient-text: linear-gradient(135deg, hsl(185 100% 45%), hsl(185 100% 55%));
+    --gradient-text: linear-gradient(90deg, hsl(185 100% 40%), hsl(185 100% 60%), hsl(185 100% 40%));
 
     /* Logo Blue Shadows */
     --shadow-premium: 0 25px 50px -12px hsl(185 100% 45% / 0.25);
@@ -181,5 +181,10 @@
   
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Additional animations */
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
   }
 }

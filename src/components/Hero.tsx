@@ -41,33 +41,38 @@ const Hero = () => {
         </Badge>
 
         {/* Main Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          <span className="gradient-text">Grow Beyyond Expectations</span>
-          <br />
-          <span className="text-foreground">with</span>
-          <br />
-          <span className="gradient-text">AI-Powered Marketing</span>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
+          <span className="block text-primary drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)] animate-pulse">
+            Grow Beyond
+          </span>
+          <span className="block text-6xl md:text-8xl lg:text-9xl font-black bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-gradient bg-[length:200%_200%] drop-shadow-[0_0_50px_hsl(var(--primary)/0.8)]">
+            EXPECTATIONS
+          </span>
+          <span className="block text-3xl md:text-5xl lg:text-6xl font-bold text-foreground/90 mt-4">
+            with <span className="text-primary font-black">AI-Powered Marketing</span>
+          </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Transform your business with cutting-edge AI marketing solutions that drive 
-          <span className="text-primary font-semibold"> 300% better results</span>. 
-          The future of digital marketing is here.
+        <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-relaxed font-medium">
+          Transform your business with cutting-edge AI marketing solutions that deliver 
+          <span className="text-primary font-bold text-2xl md:text-3xl drop-shadow-[0_0_20px_hsl(var(--primary)/0.5)]"> 300% better results</span>. 
+          <br className="hidden md:block" />
+          <span className="text-foreground font-semibold">The future of digital marketing starts now.</span>
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <Button size="lg" className="text-lg px-8 py-6 shadow-intense group">
-            Start Your AI Transformation
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <Button size="lg" className="text-xl px-12 py-8 shadow-intense group hover:shadow-[0_0_50px_hsl(var(--primary)/0.6)] hover:scale-105 transition-all duration-300 font-bold">
+            🚀 Start Your AI Transformation
+            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
           </Button>
           <Button 
             variant="outline" 
             size="lg" 
-            className="text-lg px-8 py-6 border-primary/50 hover:border-primary"
+            className="text-xl px-12 py-8 border-2 border-primary/70 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] hover:scale-105 transition-all duration-300 font-semibold"
           >
-            Get Free AI Audit
+            ⚡ Get Free AI Audit
           </Button>
         </div>
 
