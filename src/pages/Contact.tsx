@@ -20,7 +20,7 @@ const Contact = () => {
       icon: Phone,
       title: "Phone",
       description: "Speak directly with our AI marketing experts",
-      details: "+91 8886435551, +91 6301361053",
+      details: "+91 8886435551, +91 8886435558",
       availability: "Mon-Fri, 9AM-6PM IST"
     },
     {
