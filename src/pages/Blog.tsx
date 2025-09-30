@@ -2,6 +2,8 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -37,7 +39,7 @@ const Blog = () => {
     {
       title: "ChatGPT for Marketing: 25 Proven Use Cases",
       excerpt: "Discover practical ways to leverage ChatGPT for content creation, customer service, and campaign optimization.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "September 12, 2025",
       readTime: "10 min read",
       category: "AI Tools",
@@ -55,7 +57,7 @@ const Blog = () => {
     {
       title: "AI Content Creation: Tools and Techniques for Scale",
       excerpt: "Master AI-powered content generation for blogs, social media, and video marketing at unprecedented scale.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "September 8, 2025",
       readTime: "8 min read",
       category: "Content Marketing",
@@ -73,7 +75,7 @@ const Blog = () => {
     {
       title: "AI-Driven Social Media Strategy: Beyond Basic Scheduling",
       excerpt: "Use artificial intelligence to optimize posting times, content types, and audience engagement strategies.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "September 3, 2025",
       readTime: "9 min read",
       category: "Social Media",
@@ -91,7 +93,7 @@ const Blog = () => {
     {
       title: "Natural Language Processing for Customer Insights",
       excerpt: "Extract valuable insights from customer feedback, reviews, and social mentions using NLP techniques.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "August 28, 2025",
       readTime: "10 min read",
       category: "Customer Intelligence",
@@ -109,7 +111,7 @@ const Blog = () => {
     {
       title: "Recommendation Engines: Building AI-Powered Product Suggestions",
       excerpt: "Design and implement recommendation systems that boost sales and improve customer experience.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "August 22, 2025",
       readTime: "14 min read",
       category: "AI Systems",
@@ -127,7 +129,7 @@ const Blog = () => {
     {
       title: "AI Voice Marketing: The Next Frontier in Customer Engagement",
       excerpt: "Explore voice AI applications for marketing, from voice search optimization to AI voice assistants.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "August 18, 2025",
       readTime: "9 min read",
       category: "Voice Technology",
@@ -145,7 +147,7 @@ const Blog = () => {
     {
       title: "AI-Powered A/B Testing: Beyond Traditional Split Testing",
       excerpt: "Use machine learning to run more sophisticated experiments and discover winning variations faster.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "August 12, 2025",
       readTime: "8 min read",
       category: "Testing & Optimization",
@@ -163,7 +165,7 @@ const Blog = () => {
     {
       title: "AI Lead Scoring: Qualify Prospects with Machine Learning",
       excerpt: "Build intelligent lead scoring models that identify sales-ready prospects with unprecedented accuracy.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "August 8, 2025",
       readTime: "13 min read",
       category: "Lead Generation",
@@ -181,7 +183,7 @@ const Blog = () => {
     {
       title: "AI Chat Marketing: Conversational AI for Customer Acquisition",
       excerpt: "Design AI chatbots that convert visitors into customers through intelligent conversation flows.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "August 3, 2025",
       readTime: "9 min read",
       category: "Conversational AI",
@@ -199,7 +201,7 @@ const Blog = () => {
     {
       title: "AI Image Recognition for Marketing: Visual Intelligence Applications",
       excerpt: "Use computer vision for logo detection, visual content analysis, and automated image tagging.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "July 29, 2025",
       readTime: "11 min read",
       category: "Visual AI",
@@ -217,7 +219,7 @@ const Blog = () => {
     {
       title: "AI-Driven Influencer Marketing: Find Perfect Brand Ambassadors",
       excerpt: "Use AI to identify, evaluate, and collaborate with influencers who align with your brand values.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "July 24, 2025",
       readTime: "8 min read",
       category: "Influencer Marketing",
@@ -235,7 +237,7 @@ const Blog = () => {
     {
       title: "AI Content Personalization: Individual Customer Experiences",
       excerpt: "Create personalized content experiences for each visitor using AI-powered content engines.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "July 19, 2025",
       readTime: "9 min read",
       category: "Personalization",
@@ -253,7 +255,7 @@ const Blog = () => {
     {
       title: "AI Video Marketing: Automated Video Creation and Optimization",
       excerpt: "Generate and optimize video content at scale using artificial intelligence technologies.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "July 15, 2025",
       readTime: "13 min read",
       category: "Video Marketing",
@@ -271,7 +273,7 @@ const Blog = () => {
     {
       title: "AI-Powered SEO: Next-Generation Search Optimization",
       excerpt: "Optimize for search engines using AI tools for keyword research, content optimization, and ranking prediction.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "July 10, 2025",
       readTime: "14 min read",
       category: "SEO & Search",
@@ -488,6 +490,13 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="AI Marketing Blog"
+        description="Latest AI marketing insights, strategies, and case studies. Learn about machine learning, automation, predictive analytics, and cutting-edge marketing technologies."
+        keywords="AI marketing blog, marketing insights, AI strategies, machine learning marketing, automation guides"
+        canonicalUrl="https://growbeyyond.in/blog"
+      />
+      
       <Navigation />
       
       <main className="pt-16">
@@ -671,6 +680,7 @@ const Blog = () => {
           </div>
         </section>
       </main>
+      <Footer />
       <ChatBot />
       <WhatsAppFloat />
     </div>

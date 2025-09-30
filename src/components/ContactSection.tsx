@@ -13,6 +13,14 @@ import {
   Send
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Please enter a valid email").max(255, "Email is too long"),
+  company: z.string().trim().max(100, "Company name is too long").optional(),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message is too long"),
+});
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -21,15 +29,32 @@ const ContactSection = () => {
     company: "",
     message: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your interest. We'll contact you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
+    
+    const validation = contactSchema.safeParse(formData);
+    if (!validation.success) {
+      toast({
+        title: "Validation Error",
+        description: validation.error.errors[0].message,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    
+    setTimeout(() => {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your interest. We'll contact you within 24 hours.",
+      });
+      setFormData({ name: "", email: "", company: "", message: "" });
+      setIsLoading(false);
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -115,9 +140,10 @@ const ContactSection = () => {
                   type="submit" 
                   size="lg" 
                   className="w-full shadow-premium group"
+                  disabled={isLoading}
                 >
-                  Get My Free Audit
-                  <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {isLoading ? "Sending..." : "Get My Free Audit"}
+                  {!isLoading && <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />}
                 </Button>
               </form>
             </CardContent>

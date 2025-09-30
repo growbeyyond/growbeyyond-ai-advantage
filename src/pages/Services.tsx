@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -76,6 +78,13 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="AI Marketing Services"
+        description="Comprehensive AI-powered marketing services including SEO, SEM, social media automation, predictive analytics, email marketing, and content creation. Transform your marketing with intelligent automation."
+        keywords="AI marketing services, SEO optimization, SEM campaigns, social media automation, predictive analytics, email marketing automation"
+        canonicalUrl="https://growbeyyond.in/services"
+      />
+      
       <Navigation />
       
       <main className="pt-16">
@@ -191,6 +200,7 @@ const Services = () => {
           </div>
         </section>
       </main>
+      <Footer />
       <ChatBot />
       <WhatsAppFloat />
     </div>

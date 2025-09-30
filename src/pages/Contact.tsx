@@ -2,6 +2,8 @@ import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
@@ -57,6 +59,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Contact Us"
+        description="Get in touch with Grow Beyyond's AI marketing experts. Free consultation available. Response within 2 hours. Located in Hyderabad, Telangana."
+        keywords="contact AI marketing agency, get in touch, free consultation, Hyderabad marketing agency"
+        canonicalUrl="https://growbeyyond.in/contact"
+      />
+      
       <Navigation />
       
       <main className="pt-16">
@@ -226,6 +235,7 @@ const Contact = () => {
           </div>
         </section>
       </main>
+      <Footer />
       <ChatBot />
       <WhatsAppFloat />
     </div>

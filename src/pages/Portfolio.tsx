@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +13,13 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Portfolio & Case Studies"
+        description="Real success stories from AI-powered marketing campaigns. See how we've helped healthcare professionals and businesses achieve 350%+ growth through intelligent automation and data-driven strategies."
+        keywords="marketing case studies, AI marketing results, portfolio, success stories, healthcare marketing"
+        canonicalUrl="https://growbeyyond.in/portfolio"
+      />
+      
       <Navigation />
       
       <main className="pt-16">
@@ -187,6 +196,7 @@ const Portfolio = () => {
           </div>
         </section>
       </main>
+      <Footer />
       <ChatBot />
       <WhatsAppFloat />
     </div>

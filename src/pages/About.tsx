@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -84,6 +86,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="About Us"
+        description="Meet the AI marketing pioneers at Grow Beyyond. Founded in 2024, we specialize in healthcare marketing with 7+ active clients and ₹50L+ revenue impact. Learn about our mission and values."
+        keywords="about grow beyyond, AI marketing agency, healthcare marketing experts, Maniteja Chowdary"
+        canonicalUrl="https://growbeyyond.in/about"
+      />
+      
       <Navigation />
       
       <main className="pt-16">
@@ -291,6 +300,7 @@ const About = () => {
           </div>
         </section>
       </main>
+      <Footer />
       <ChatBot />
       <WhatsAppFloat />
     </div>

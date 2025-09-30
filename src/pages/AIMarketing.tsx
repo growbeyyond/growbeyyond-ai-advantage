@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -70,6 +72,13 @@ const AIMarketing = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="AI Marketing Solutions"
+        description="Harness cutting-edge AI technology for marketing automation, optimization, and acceleration. Our proprietary AI systems deliver results that traditional marketing cannot achieve."
+        keywords="AI marketing, artificial intelligence marketing, machine learning marketing, marketing automation, predictive targeting"
+        canonicalUrl="https://growbeyyond.in/ai-marketing"
+      />
+      
       <Navigation />
       
       <main className="pt-16">
@@ -241,6 +250,7 @@ const AIMarketing = () => {
           </div>
         </section>
       </main>
+      <Footer />
       <ChatBot />
       <WhatsAppFloat />
     </div>
