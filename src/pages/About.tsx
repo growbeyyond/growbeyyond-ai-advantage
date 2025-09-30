@@ -28,14 +28,6 @@ const About = () => {
       avatar: "MC",
       image: "/lovable-uploads/888f5573-713f-426e-96c1-ab83c3a30e47.png",
       social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Rashi Gupta",
-      role: "Managing Director",
-      bio: "Strategic marketing expert with 10+ years driving growth for Fortune 500 companies. Specializes in AI-powered customer acquisition and retention strategies. Proven track record of implementing marketing automation systems that deliver 300%+ ROI improvements.",
-      avatar: "RG",
-      image: "/lovable-uploads/e4cbad91-4568-4a6b-a2d1-127d4b7644ca.png",
-      social: { linkedin: "#", twitter: "#" }
     }
   ];
 
