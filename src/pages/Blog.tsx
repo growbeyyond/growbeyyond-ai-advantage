@@ -291,7 +291,7 @@ const Blog = () => {
     {
       title: "AI Crisis Management: Automated Brand Protection Strategies",
       excerpt: "Implement AI systems that detect and respond to brand crises before they escalate.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "July 5, 2025",
       readTime: "9 min read",
       category: "Crisis Management",
@@ -309,7 +309,7 @@ const Blog = () => {
     {
       title: "AI-Driven Mobile Marketing: Smartphone-First Strategies",
       excerpt: "Optimize mobile marketing campaigns using AI for location targeting, app marketing, and mobile personalization.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "July 1, 2025",
       readTime: "10 min read",
       category: "Mobile Marketing",
@@ -327,7 +327,7 @@ const Blog = () => {
     {
       title: "AI Retail Marketing: Intelligent Shopping Experiences",
       excerpt: "Transform retail marketing with AI-powered recommendations, inventory optimization, and customer insights.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "June 27, 2025",
       readTime: "12 min read",
       category: "Retail Marketing",
@@ -345,7 +345,7 @@ const Blog = () => {
     {
       title: "AI Ethics in Marketing: Responsible AI Implementation",
       excerpt: "Build ethical AI marketing systems that respect privacy, avoid bias, and maintain customer trust.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "June 22, 2025",
       readTime: "11 min read",
       category: "AI Ethics",
@@ -363,7 +363,7 @@ const Blog = () => {
     {
       title: "AI Trend Prediction: Forecast Market Changes Before They Happen",
       excerpt: "Use machine learning to predict marketing trends and consumer behavior shifts before your competitors.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "June 18, 2025",
       readTime: "9 min read",
       category: "Trend Analysis",
@@ -381,7 +381,7 @@ const Blog = () => {
     {
       title: "AI-Enhanced Creative Development: Art Meets Algorithm",
       excerpt: "Combine human creativity with AI assistance to produce more effective marketing creative at scale.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "June 13, 2025",
       readTime: "8 min read",
       category: "Creative AI",
@@ -399,7 +399,7 @@ const Blog = () => {
     {
       title: "AI Marketing ROI Measurement: Advanced Attribution & Analytics",
       excerpt: "Measure true marketing ROI using AI-powered attribution models and advanced analytics frameworks.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "June 8, 2025",
       readTime: "13 min read",
       category: "ROI & Measurement",
@@ -417,7 +417,7 @@ const Blog = () => {
     {
       title: "AI-Powered Crisis Communication: Automated Response Systems",
       excerpt: "Build AI systems that detect, analyze, and respond to communication crises in real-time.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "June 3, 2025",
       readTime: "10 min read",
       category: "Crisis Communication",
@@ -435,7 +435,7 @@ const Blog = () => {
     {
       title: "AI Content Strategy: Data-Driven Content Planning and Creation",
       excerpt: "Develop content strategies using AI insights for topic research, content gaps, and performance prediction.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "May 28, 2025",
       readTime: "9 min read",
       category: "Content Strategy",
@@ -471,13 +471,33 @@ const Blog = () => {
     {
       title: "AI Marketing Stack Integration: Building Unified Technology Ecosystems",
       excerpt: "Integrate AI tools across your marketing technology stack for seamless data flow and optimization.",
-      author: "Rashi Gupta",
+      author: "Maniteja Chowdary",
       date: "December 20, 2024",
       readTime: "13 min read",
       category: "MarTech Integration",
       image: chatgptMarketingImg
     }
   ];
+
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Grow Beyyond AI Marketing Blog",
+    "description": "Expert insights on AI marketing, automation, and digital transformation",
+    "url": "https://growbeyyond.in/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grow Beyyond",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://growbeyyond.in/logo.png"
+      }
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Maniteja Chowdary"
+    }
+  };
 
   const categories = ["All", "AI Marketing", "Analytics", "Content Marketing", "Automation", "AI Tools"];
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -495,6 +515,7 @@ const Blog = () => {
         description="Latest AI marketing insights, strategies, and case studies. Learn about machine learning, automation, predictive analytics, and cutting-edge marketing technologies."
         keywords="AI marketing blog, marketing insights, AI strategies, machine learning marketing, automation guides"
         canonicalUrl="https://growbeyyond.in/blog"
+        schema={blogSchema}
       />
       
       <Navigation />

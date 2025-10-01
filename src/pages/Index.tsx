@@ -23,17 +23,58 @@ const Index = () => {
     "url": "https://growbeyyond.in",
     "logo": "https://growbeyyond.in/logo.png",
     "description": "AI-powered marketing agency specializing in healthcare and business growth through cutting-edge artificial intelligence and data-driven strategies.",
+    "email": "directors@growbeyyond.in",
+    "telephone": ["+91-8886435551", "+91-8886435558"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Hyderabad",
       "addressRegion": "Telangana",
       "addressCountry": "IN"
     },
+    "sameAs": [
+      "https://www.linkedin.com/company/growbeyyond",
+      "https://twitter.com/growbeyyond"
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-8886435551",
-      "contactType": "customer service",
-      "email": "directors@growbeyyond.in"
+      "contactType": "Customer Service",
+      "email": "directors@growbeyyond.in",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Marketing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Marketing Automation",
+            "description": "Automated marketing campaigns powered by artificial intelligence"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Predictive Analytics",
+            "description": "Data-driven insights and predictions for marketing success"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Customer Segmentation",
+            "description": "AI-powered customer segmentation and targeting"
+          }
+        }
+      ]
     }
   };
 

@@ -17,6 +17,26 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Grow Beyyond",
+    "description": "Get in touch with Grow Beyyond for AI-powered marketing solutions",
+    "url": "https://growbeyyond.in/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Grow Beyyond",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-8886435551",
+        "contactType": "Customer Service",
+        "email": "directors@growbeyyond.in",
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": "IN"
+      }
+    }
+  };
+
   const contactMethods = [
     {
       icon: Phone,
@@ -64,6 +84,7 @@ const Contact = () => {
         description="Get in touch with Grow Beyyond's AI marketing experts. Free consultation available. Response within 2 hours. Located in Hyderabad, Telangana."
         keywords="contact AI marketing agency, get in touch, free consultation, Hyderabad marketing agency"
         canonicalUrl="https://growbeyyond.in/contact"
+        schema={contactSchema}
       />
       
       <Navigation />

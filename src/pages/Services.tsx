@@ -20,6 +20,51 @@ import {
 } from "lucide-react";
 
 const Services = () => {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "AI Marketing Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Grow Beyyond",
+      "url": "https://growbeyyond.in"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Marketing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Marketing Automation",
+            "description": "Streamline marketing workflows with intelligent automation powered by machine learning algorithms"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Predictive Analytics",
+            "description": "Forecast customer behavior and campaign performance with AI-driven analytics"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Customer Segmentation",
+            "description": "Identify and target audience segments with precision using machine learning"
+          }
+        }
+      ]
+    }
+  };
+
   const mainServices = [
     {
       icon: Brain,
@@ -83,6 +128,7 @@ const Services = () => {
         description="Comprehensive AI-powered marketing services including SEO, SEM, social media automation, predictive analytics, email marketing, and content creation. Transform your marketing with intelligent automation."
         keywords="AI marketing services, SEO optimization, SEM campaigns, social media automation, predictive analytics, email marketing automation"
         canonicalUrl="https://growbeyyond.in/services"
+        schema={serviceSchema}
       />
       
       <Navigation />
