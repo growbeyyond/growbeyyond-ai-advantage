@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -7,80 +8,20 @@ import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { 
   Clock, 
   User, 
   ArrowRight,
   TrendingUp,
   Brain,
-  Zap
+  Zap,
+  Search
 } from "lucide-react";
-
-// Import blog images
-import aiSegmentationImg from "@/assets/blog-ai-segmentation.jpg";
-import chatgptMarketingImg from "@/assets/blog-chatgpt-marketing.jpg";
-import predictiveAnalyticsImg from "@/assets/blog-predictive-analytics.jpg";
-import aiContentImg from "@/assets/blog-ai-content.jpg";
-import automationImg from "@/assets/blog-automation.jpg";
-import socialAiImg from "@/assets/blog-social-ai.jpg";
+import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      title: "AI-Powered Customer Segmentation: The Ultimate Guide",
-      excerpt: "Learn how machine learning algorithms can identify high-value customer segments with 95% accuracy, leading to 300% better conversion rates.",
-      author: "Maniteja Chowdary",
-      date: "September 15, 2025",
-      readTime: "12 min read",
-      category: "AI Marketing",
-      featured: true,
-      image: aiSegmentationImg
-    },
-    {
-      title: "ChatGPT for Marketing: 25 Proven Use Cases",
-      excerpt: "Discover practical ways to leverage ChatGPT for content creation, customer service, and campaign optimization.",
-      author: "Maniteja Chowdary",
-      date: "September 12, 2025",
-      readTime: "10 min read",
-      category: "AI Tools",
-      image: chatgptMarketingImg
-    },
-    {
-      title: "Predictive Analytics in Digital Marketing: A Complete Framework",
-      excerpt: "Build predictive models that forecast customer behavior and optimize marketing spend with data-driven insights.",
-      author: "Maniteja Chowdary",
-      date: "September 10, 2025",
-      readTime: "15 min read",
-      category: "Analytics",
-      image: predictiveAnalyticsImg
-    },
-    {
-      title: "AI Content Creation: Tools and Techniques for Scale",
-      excerpt: "Master AI-powered content generation for blogs, social media, and video marketing at unprecedented scale.",
-      author: "Maniteja Chowdary",
-      date: "September 8, 2025",
-      readTime: "8 min read",
-      category: "Content Marketing",
-      image: aiContentImg
-    },
-    {
-      title: "Marketing Automation with Machine Learning: Best Practices",
-      excerpt: "Implement intelligent automation workflows that adapt and optimize based on real-time performance data.",
-      author: "Maniteja Chowdary",
-      date: "September 5, 2025",
-      readTime: "11 min read",
-      category: "Automation",
-      image: automationImg
-    },
-    {
-      title: "AI-Driven Social Media Strategy: Beyond Basic Scheduling",
-      excerpt: "Use artificial intelligence to optimize posting times, content types, and audience engagement strategies.",
-      author: "Maniteja Chowdary",
-      date: "September 3, 2025",
-      readTime: "9 min read",
-      category: "Social Media",
-      image: socialAiImg
-    },
+  const [searchQuery, setSearchQuery] = useState("");
     {
       title: "Computer Vision in E-commerce Marketing: Visual AI Applications",
       excerpt: "Leverage computer vision for product recommendations, visual search, and automated image optimization.",
@@ -502,9 +443,18 @@ const Blog = () => {
   const categories = ["All", "AI Marketing", "Analytics", "Content Marketing", "Automation", "AI Tools"];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredPosts = selectedCategory === "All" 
+  // Filter posts by both search query and category
+  let filteredPosts = selectedCategory === "All" 
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
+
+  if (searchQuery.trim()) {
+    filteredPosts = filteredPosts.filter(post => 
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
 
   const featuredPost = blogPosts[0];
 
@@ -549,6 +499,30 @@ const Blog = () => {
           </div>
         </section>
 
+        {/* Search Bar */}
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Search articles by title, topic, or keyword..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-12 py-6 text-lg bg-card border-border/50 focus:border-primary"
+                />
+              </div>
+              {searchQuery && (
+                <p className="mt-4 text-sm text-muted-foreground text-center">
+                  Found {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''} matching "{searchQuery}"
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
+
         {/* Featured Post */}
         {featuredPost && (
           <section className="py-16">
@@ -558,13 +532,14 @@ const Blog = () => {
               </div>
               
               <Card className="glass-card border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-premium">
-                <div className="md:flex">
+                <Link to={`/blog/${featuredPost.id}`} className="md:flex">
                   <div className="md:w-1/2 h-64 overflow-hidden">
                     {featuredPost.image ? (
                       <img 
                         src={featuredPost.image} 
                         alt={featuredPost.title} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
                       />
                     ) : (
                       <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-8 flex items-center justify-center h-full">
@@ -577,7 +552,7 @@ const Blog = () => {
                   </div>
                   <CardContent className="md:w-1/2 p-8">
                     <Badge variant="secondary" className="mb-4">{featuredPost.category}</Badge>
-                    <h3 className="text-2xl font-bold mb-4 gradient-text">{featuredPost.title}</h3>
+                    <h3 className="text-2xl font-bold mb-4 gradient-text hover:text-primary transition-colors">{featuredPost.title}</h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">{featuredPost.excerpt}</p>
                     
                     <div className="flex items-center justify-between">
@@ -594,7 +569,7 @@ const Blog = () => {
                       </Button>
                     </div>
                   </CardContent>
-                </div>
+                </Link>
               </Card>
             </div>
           </section>
@@ -623,55 +598,57 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.slice(1).map((post, index) => (
-                <Card 
-                  key={index}
-                  className="glass-card border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-premium hover:-translate-y-1 group cursor-pointer"
-                >
-                  <div className="h-48 overflow-hidden">
-                    {post.image ? (
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    ) : (
-                      <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 flex items-center justify-center h-full">
-                        <TrendingUp className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                    )}
-                  </div>
-                  
-                  <CardContent className="p-6">
-                    <Badge variant="outline" className="mb-3 border-primary/30">{post.category}</Badge>
-                    <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <div className="flex items-center">
-                        <User className="w-3 h-3 mr-1" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Clock className="w-3 h-3 mr-1" />
-                        <span>{post.readTime}</span>
-                      </div>
+                <Link to={`/blog/${post.id}`} key={index}>
+                  <Card 
+                    className="glass-card border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-premium hover:-translate-y-1 group cursor-pointer h-full"
+                  >
+                    <div className="h-48 overflow-hidden">
+                      {post.image ? (
+                        <img 
+                          src={post.image} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 flex items-center justify-center h-full">
+                          <TrendingUp className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                      )}
                     </div>
                     
-                    <div className="mt-4 pt-4 border-t border-border/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-muted-foreground">{post.date}</span>
-                        <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground">
-                          Read More
-                          <ArrowRight className="ml-1 w-3 h-3" />
-                        </Button>
+                    <CardContent className="p-6">
+                      <Badge variant="outline" className="mb-3 border-primary/30">{post.category}</Badge>
+                      <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <div className="flex items-center">
+                          <User className="w-3 h-3 mr-1" />
+                          <span>{post.author}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Clock className="w-3 h-3 mr-1" />
+                          <span>{post.readTime}</span>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      
+                      <div className="mt-4 pt-4 border-t border-border/50">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-muted-foreground">{post.date}</span>
+                          <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground">
+                            Read More
+                            <ArrowRight className="ml-1 w-3 h-3" />
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
