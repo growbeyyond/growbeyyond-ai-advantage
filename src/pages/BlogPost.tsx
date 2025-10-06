@@ -74,7 +74,7 @@ const BlogPost = () => {
       <SEOHead 
         title={post.title}
         description={post.excerpt}
-        keywords={`${post.category}, AI marketing, ${post.title}`}
+        keywords={post.keywords?.join(", ") || `${post.category}, AI marketing, digital marketing, machine learning, ${post.title}`}
         canonicalUrl={`https://growbeyyond.in/blog/${post.id}`}
         ogImage={post.image}
         ogType="article"
@@ -85,9 +85,13 @@ const BlogPost = () => {
           "description": post.excerpt,
           "image": post.image,
           "datePublished": new Date(post.date).toISOString(),
+          "keywords": post.keywords?.join(", ") || post.category,
+          "articleSection": post.category,
+          "wordCount": post.readTime,
           "author": {
             "@type": "Person",
-            "name": post.author
+            "name": post.author,
+            "url": "https://growbeyyond.in/about"
           },
           "publisher": {
             "@type": "Organization",
@@ -96,6 +100,10 @@ const BlogPost = () => {
               "@type": "ImageObject",
               "url": "https://growbeyyond.in/logo.png"
             }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://growbeyyond.in/blog/${post.id}`
           }
         }}
       />
@@ -163,11 +171,22 @@ const BlogPost = () => {
             <div className="mb-12 rounded-2xl overflow-hidden">
               <img 
                 src={post.image} 
-                alt={post.title}
+                alt={`${post.title} - ${post.keywords?.slice(0, 3).join(", ") || post.category}`}
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
             </div>
+
+            {/* Tags/Keywords Section */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="mb-8 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <Badge key={tag} variant="outline" className="text-xs">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
 
             {/* Content */}
             <div 
@@ -203,7 +222,7 @@ const BlogPost = () => {
                     <Link to={`/blog/${relatedPost.id}`}>
                       <img 
                         src={relatedPost.image} 
-                        alt={relatedPost.title}
+                        alt={`${relatedPost.title} - ${relatedPost.category}`}
                         className="w-full h-48 object-cover"
                         loading="lazy"
                       />

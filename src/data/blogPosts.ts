@@ -17,6 +17,8 @@ export interface BlogPost {
   image: string;
   featured?: boolean;
   content?: string;
+  keywords?: string[];
+  tags?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -30,20 +32,33 @@ export const blogPosts: BlogPost[] = [
     category: "AI Marketing",
     featured: true,
     image: aiSegmentationImg,
+    keywords: [
+      "AI customer segmentation",
+      "machine learning marketing",
+      "customer segmentation strategy",
+      "predictive analytics",
+      "marketing automation",
+      "data-driven marketing",
+      "customer behavior analysis",
+      "AI marketing tools",
+      "conversion rate optimization",
+      "customer insights AI"
+    ],
+    tags: ["AI", "Machine Learning", "Customer Segmentation", "Marketing Analytics", "CRO"],
     content: `
       <h2>Understanding AI-Powered Customer Segmentation</h2>
-      <p>Customer segmentation has evolved from simple demographic divisions to sophisticated AI-powered analysis that predicts behavior with remarkable accuracy. This guide explores how machine learning transforms customer understanding.</p>
+      <p>Customer segmentation has evolved from simple demographic divisions to sophisticated <strong>AI-powered analysis</strong> that predicts behavior with remarkable accuracy. This guide explores how <strong>machine learning</strong> transforms customer understanding and drives <strong>conversion rate optimization</strong>.</p>
 
       <h2>Key Benefits of AI Segmentation</h2>
       <ul>
-        <li><strong>95% Accuracy:</strong> ML algorithms identify patterns humans might miss</li>
-        <li><strong>Real-time Adaptation:</strong> Segments update as customer behavior changes</li>
-        <li><strong>Predictive Power:</strong> Forecast future customer needs and behaviors</li>
-        <li><strong>Scalability:</strong> Analyze millions of data points instantly</li>
+        <li><strong>95% Accuracy:</strong> <strong>ML algorithms</strong> identify patterns humans might miss in <strong>customer behavior analysis</strong></li>
+        <li><strong>Real-time Adaptation:</strong> Segments update as customer behavior changes using <strong>predictive analytics</strong></li>
+        <li><strong>Predictive Power:</strong> Forecast future customer needs and behaviors with <strong>AI marketing tools</strong></li>
+        <li><strong>Scalability:</strong> Analyze millions of data points instantly with <strong>marketing automation</strong></li>
       </ul>
 
       <h2>Implementation Strategy</h2>
-      <p>Start by collecting comprehensive customer data, choose appropriate ML algorithms, train models with historical data, and continuously refine based on results.</p>
+      <p>Start by collecting comprehensive customer data, choose appropriate <strong>ML algorithms</strong>, train models with historical data, and continuously refine based on results. <strong>Data-driven marketing</strong> strategies powered by AI deliver measurable ROI improvements.</p>
     `
   },
   {
@@ -54,7 +69,20 @@ export const blogPosts: BlogPost[] = [
     date: "September 12, 2025",
     readTime: "10 min read",
     category: "AI Tools",
-    image: chatgptMarketingImg
+    image: chatgptMarketingImg,
+    keywords: [
+      "ChatGPT marketing",
+      "AI content creation",
+      "GPT-4 marketing tools",
+      "AI copywriting",
+      "chatbot marketing",
+      "conversational AI",
+      "content marketing automation",
+      "AI writing assistant",
+      "marketing AI tools",
+      "generative AI marketing"
+    ],
+    tags: ["ChatGPT", "AI Tools", "Content Creation", "Marketing Automation", "Copywriting"]
   },
   {
     id: "predictive-analytics-framework",
@@ -64,7 +92,20 @@ export const blogPosts: BlogPost[] = [
     date: "September 10, 2025",
     readTime: "15 min read",
     category: "Analytics",
-    image: predictiveAnalyticsImg
+    image: predictiveAnalyticsImg,
+    keywords: [
+      "predictive analytics marketing",
+      "marketing analytics",
+      "customer behavior prediction",
+      "data science marketing",
+      "ROI optimization",
+      "marketing forecasting",
+      "big data marketing",
+      "marketing attribution",
+      "analytics framework",
+      "marketing metrics"
+    ],
+    tags: ["Predictive Analytics", "Data Science", "Marketing Analytics", "ROI", "Forecasting"]
   },
   {
     id: "ai-content-creation-scale",
@@ -74,7 +115,20 @@ export const blogPosts: BlogPost[] = [
     date: "September 8, 2025",
     readTime: "8 min read",
     category: "Content Marketing",
-    image: aiContentImg
+    image: aiContentImg,
+    keywords: [
+      "AI content generation",
+      "automated content creation",
+      "content marketing AI",
+      "AI writing tools",
+      "blog automation",
+      "social media content AI",
+      "video marketing AI",
+      "content at scale",
+      "AI copywriting tools",
+      "content optimization"
+    ],
+    tags: ["AI Content", "Content Marketing", "Automation", "Copywriting", "SEO"]
   },
   {
     id: "marketing-automation-ml",
@@ -84,7 +138,20 @@ export const blogPosts: BlogPost[] = [
     date: "September 5, 2025",
     readTime: "11 min read",
     category: "Automation",
-    image: automationImg
+    image: automationImg,
+    keywords: [
+      "marketing automation",
+      "machine learning automation",
+      "workflow automation",
+      "email automation AI",
+      "campaign automation",
+      "marketing technology",
+      "MarTech AI",
+      "intelligent automation",
+      "real-time optimization",
+      "automated marketing"
+    ],
+    tags: ["Marketing Automation", "Machine Learning", "Workflows", "Email Marketing", "MarTech"]
   },
   {
     id: "ai-social-media-strategy",
@@ -94,6 +161,19 @@ export const blogPosts: BlogPost[] = [
     date: "September 3, 2025",
     readTime: "9 min read",
     category: "Social Media",
-    image: socialAiImg
+    image: socialAiImg,
+    keywords: [
+      "AI social media marketing",
+      "social media automation",
+      "social media AI tools",
+      "content scheduling AI",
+      "engagement optimization",
+      "social listening AI",
+      "audience targeting AI",
+      "social media analytics",
+      "influencer marketing AI",
+      "social media strategy"
+    ],
+    tags: ["Social Media", "AI Marketing", "Engagement", "Content Strategy", "Analytics"]
   }
 ];
