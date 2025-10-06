@@ -15,7 +15,7 @@ const SEOHead = ({
   description,
   keywords = "AI marketing, digital marketing, machine learning, marketing automation, predictive analytics",
   canonicalUrl,
-  ogImage = "https://growbeyyond.in/og-image.jpg",
+  ogImage = "/og-image.png",
   ogType = "website",
   schema
 }: SEOHeadProps) => {
