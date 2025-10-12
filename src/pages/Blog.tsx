@@ -24,7 +24,7 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const blogSchema = {
-    "@context", "https://schema.org",
+    "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Grow Beyyond AI Marketing Blog",
     "description": "Expert insights on AI marketing, automation, and digital transformation",
