@@ -14,6 +14,7 @@ import {
   Mail,
   ArrowRight,
   Shield,
+  Download,
   BarChart3,
   Megaphone,
   UserCheck,
@@ -91,7 +92,7 @@ const RealEstateMarketing = () => {
               Sell your <span className="text-primary font-bold">Open Plots</span>, <span className="text-primary font-bold">Apartments</span> & <span className="text-primary font-bold">Villas</span> faster with our risk-free marketing model
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-6 shadow-intense group"
@@ -111,6 +112,20 @@ const RealEstateMarketing = () => {
                 }}
               >
                 +91 9136376777
+              </Button>
+            </div>
+            
+            <div className="mb-12">
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                className="text-lg px-8 py-4"
+                asChild
+              >
+                <a href="/brochures/real-estate-brochure.pdf" download>
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Brochure
+                </a>
               </Button>
             </div>
 
