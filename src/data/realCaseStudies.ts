@@ -293,5 +293,157 @@ export const realCaseStudies: CaseStudy[] = [
     services: ["Real Estate Marketing", "Trust Building Campaigns", "Lead Generation AI", "Property Showcase Strategies"],
     imageUrl: "/lovable-uploads/3957b019-161b-40ff-aed4-84170e7306b4.png",
     featured: false
+  },
+  {
+    id: "dr-prasanna-boddupally",
+    clientName: "Dr. Prasanna Boddupally",
+    industry: "Healthcare - Dermatology",
+    challenge: "Expert dermatologist needed to establish online presence and attract patients seeking specialized skin care treatments in a competitive healthcare market.",
+    solution: "AI-powered personal branding, educational skin care content strategy, local SEO optimization, and patient testimonial campaigns for dermatology services.",
+    results: [
+      {
+        metric: "Patient Consultations",
+        improvement: "+320%",
+        timeframe: "5 months"
+      },
+      {
+        metric: "Online Visibility",
+        improvement: "+400%",
+        timeframe: "4 months"
+      },
+      {
+        metric: "Treatment Bookings",
+        improvement: "+280%",
+        timeframe: "3 months"
+      },
+      {
+        metric: "Social Engagement",
+        improvement: "+350%",
+        timeframe: "4 months"
+      }
+    ],
+    testimonial: {
+      quote: "Grow Beyyond's AI marketing helped me connect with patients seeking quality skin care. My practice visibility has grown significantly.",
+      author: "Dr. Prasanna Boddupally",
+      position: "Dermatologist & Skin Care Specialist"
+    },
+    websiteUrl: "https://www.drprasannaboddupally.in/",
+    services: ["Medical Branding", "Dermatology SEO", "Patient Education Content", "Healthcare Marketing"],
+    imageUrl: "/lovable-uploads/3957b019-161b-40ff-aed4-84170e7306b4.png",
+    featured: false
+  },
+  {
+    id: "fruits-express",
+    clientName: "Fruits Express",
+    industry: "E-commerce - Fresh Produce Delivery",
+    challenge: "Online fruit delivery startup needed to build brand awareness and increase orders in a competitive fresh produce market.",
+    solution: "E-commerce marketing strategy, AI-powered social media campaigns, customer retention automation, and local delivery optimization marketing.",
+    results: [
+      {
+        metric: "Online Orders",
+        improvement: "+450%",
+        timeframe: "4 months"
+      },
+      {
+        metric: "Customer Base",
+        improvement: "+380%",
+        timeframe: "5 months"
+      },
+      {
+        metric: "Repeat Orders",
+        improvement: "+300%",
+        timeframe: "3 months"
+      },
+      {
+        metric: "Brand Awareness",
+        improvement: "+500%",
+        timeframe: "4 months"
+      }
+    ],
+    testimonial: {
+      quote: "Their AI marketing transformed our fruit delivery business. Orders increased dramatically and we've built a loyal customer base.",
+      author: "Fruits Express Team",
+      position: "Fresh Produce Delivery"
+    },
+    websiteUrl: "https://fruitsexpress.in/",
+    services: ["E-commerce Marketing", "Social Media AI", "Customer Retention", "Local Delivery Marketing"],
+    imageUrl: "/lovable-uploads/3957b019-161b-40ff-aed4-84170e7306b4.png",
+    featured: true
+  },
+  {
+    id: "plotsque",
+    clientName: "Plotsque",
+    industry: "Real Estate - Land & Plots",
+    challenge: "Real estate company needed to generate quality leads for plot sales and build trust with property investors in a competitive market.",
+    solution: "Real estate lead generation campaigns, AI-powered property showcase marketing, investor trust-building content, and targeted digital advertising.",
+    results: [
+      {
+        metric: "Lead Generation",
+        improvement: "+420%",
+        timeframe: "4 months"
+      },
+      {
+        metric: "Site Visits",
+        improvement: "+350%",
+        timeframe: "3 months"
+      },
+      {
+        metric: "Plot Sales",
+        improvement: "+280%",
+        timeframe: "6 months"
+      },
+      {
+        metric: "Investor Inquiries",
+        improvement: "+400%",
+        timeframe: "5 months"
+      }
+    ],
+    testimonial: {
+      quote: "Grow Beyyond's AI marketing strategy helped us reach serious property investors. Our lead quality and conversions improved significantly.",
+      author: "Plotsque Team",
+      position: "Real Estate & Plot Sales"
+    },
+    websiteUrl: "https://www.plotsque.com/",
+    services: ["Real Estate Marketing", "Lead Generation AI", "Property Showcase", "Investor Marketing"],
+    imageUrl: "/lovable-uploads/3957b019-161b-40ff-aed4-84170e7306b4.png",
+    featured: true
+  },
+  {
+    id: "chitraka-fabrics",
+    clientName: "Chitraka Fabrics",
+    industry: "Retail - Textiles & Fashion",
+    challenge: "Traditional fabric store needed to expand online presence and reach customers beyond their local market while maintaining their heritage appeal.",
+    solution: "Fashion e-commerce marketing, AI-powered product showcase campaigns, cultural branding strategy, and social media fashion marketing.",
+    results: [
+      {
+        metric: "Online Sales",
+        improvement: "+380%",
+        timeframe: "5 months"
+      },
+      {
+        metric: "Website Traffic",
+        improvement: "+450%",
+        timeframe: "4 months"
+      },
+      {
+        metric: "Customer Reach",
+        improvement: "+520%",
+        timeframe: "6 months"
+      },
+      {
+        metric: "Social Following",
+        improvement: "+600%",
+        timeframe: "4 months"
+      }
+    ],
+    testimonial: {
+      quote: "Their AI marketing helped us take our traditional fabrics business online. We now reach customers across India with our heritage collection.",
+      author: "Chitraka Fabrics Team",
+      position: "Traditional Textiles & Fashion"
+    },
+    websiteUrl: "https://www.chitrakafabrics.in/",
+    services: ["Fashion Marketing", "E-commerce AI", "Cultural Branding", "Social Media Marketing"],
+    imageUrl: "/lovable-uploads/3957b019-161b-40ff-aed4-84170e7306b4.png",
+    featured: true
   }
 ];
