@@ -92,7 +92,7 @@ const Hero = ({ onOpenAuditPopup }: HeroProps) => {
             <div className="flex items-center justify-center mb-3">
               <Brain className="w-8 h-8 text-primary" />
             </div>
-            <div className="text-3xl font-bold gradient-text mb-2">7+</div>
+            <div className="text-3xl font-bold gradient-text mb-2">11+</div>
             <div className="text-muted-foreground">Active Clients</div>
           </div>
           
