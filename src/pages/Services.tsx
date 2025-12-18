@@ -18,6 +18,7 @@ import {
   FileText,
   Users,
   TrendingUp,
+  Download,
   Tv,
   BookOpen,
   Settings,
@@ -196,6 +197,18 @@ const Services = () => {
               Grow Beyyond combines the power of AI with innovative digital marketing techniques 
               to help businesses achieve organic reach and drive unprecedented growth.
             </p>
+            
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="text-lg px-8 py-4"
+              asChild
+            >
+              <a href="/brochures/services-brochure.pdf" download>
+                <Download className="w-5 h-5 mr-2" />
+                Download Brochure
+              </a>
+            </Button>
           </div>
         </section>
 
