@@ -1,8 +1,10 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackContactClick } from "@/hooks/useConversionTracking";
 
 const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
+    trackContactClick('whatsapp', '+918886435551');
     const message = "Hi! I'm interested in your AI Marketing services. Can we discuss my business needs?";
     const whatsappUrl = `https://wa.me/918886435551?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

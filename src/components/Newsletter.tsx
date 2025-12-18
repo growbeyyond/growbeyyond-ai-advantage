@@ -4,6 +4,7 @@ import { Input } from "./ui/input";
 import { Mail, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { trackFormSubmit } from "@/hooks/useConversionTracking";
 
 const emailSchema = z.object({
   email: z.string().email("Please enter a valid email address").max(255, "Email is too long"),
@@ -32,6 +33,9 @@ const Newsletter = () => {
     
     // Simulate API call
     setTimeout(() => {
+      // Track conversion
+      trackFormSubmit('newsletter');
+      
       toast({
         title: "Successfully Subscribed!",
         description: "You'll receive our latest AI marketing insights and tips.",

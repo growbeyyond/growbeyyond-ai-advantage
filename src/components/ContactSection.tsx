@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { trackFormSubmit, trackContactClick } from "@/hooks/useConversionTracking";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -48,6 +49,9 @@ const ContactSection = () => {
     setIsLoading(true);
     
     setTimeout(() => {
+      // Track conversion
+      trackFormSubmit('contact_form', { company: formData.company });
+      
       toast({
         title: "Message Sent!",
         description: "Thank you for your interest. We'll contact you within 24 hours.",
