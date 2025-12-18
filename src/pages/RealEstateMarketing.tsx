@@ -25,6 +25,8 @@ import {
   MapPin
 } from "lucide-react";
 import { trackCTAClick } from "@/hooks/useConversionTracking";
+import ChatBot from "@/components/ChatBot";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const RealEstateMarketing = () => {
   const schema = {
@@ -327,6 +329,8 @@ const RealEstateMarketing = () => {
       </section>
 
       <Footer />
+      <ChatBot />
+      <WhatsAppFloat />
     </div>
   );
 };

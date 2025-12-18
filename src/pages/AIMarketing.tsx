@@ -18,6 +18,7 @@ import {
   Bot,
   Database
 } from "lucide-react";
+import { trackCTAClick } from "@/hooks/useConversionTracking";
 
 const AIMarketing = () => {
   const aiCapabilities = [
@@ -109,11 +110,26 @@ const AIMarketing = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button size="lg" className="text-lg px-8 py-6 shadow-intense">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6 shadow-intense"
+                onClick={() => {
+                  trackCTAClick('See AI in Action', 'AI Marketing Hero');
+                  window.open('https://wa.me/918886435551?text=Hi! I want to see AI Marketing in action.', '_blank');
+                }}
+              >
                 See AI in Action
                 <Zap className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-6"
+                onClick={() => {
+                  trackCTAClick('Get AI Audit', 'AI Marketing Hero');
+                  window.open('https://wa.me/918886435551?text=Hi! I would like to get a free AI Marketing Audit.', '_blank');
+                }}
+              >
                 Get AI Audit
               </Button>
             </div>
@@ -172,7 +188,14 @@ const AIMarketing = () => {
                   We leverage the latest and most powerful AI technologies to give your marketing 
                   an unfair advantage. Our toolkit is constantly evolving with cutting-edge innovations.
                 </p>
-                <Button size="lg" className="shadow-premium group">
+                <Button 
+                  size="lg" 
+                  className="shadow-premium group"
+                  onClick={() => {
+                    trackCTAClick('Explore AI Stack', 'AI Marketing Tools');
+                    window.open('https://wa.me/918886435551?text=Hi! I want to learn more about your AI marketing tools.', '_blank');
+                  }}
+                >
                   Explore Our AI Stack
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -240,10 +263,24 @@ const AIMarketing = () => {
               when cutting-edge technology meets expert strategy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-premium">
+              <Button 
+                size="lg" 
+                className="shadow-premium"
+                onClick={() => {
+                  trackCTAClick('Start AI Transformation', 'AI Marketing CTA');
+                  window.open('https://wa.me/918886435551?text=Hi! I want to start my AI marketing transformation.', '_blank');
+                }}
+              >
                 Start Your AI Transformation
               </Button>
-              <Button variant="outline" size="lg">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => {
+                  trackCTAClick('Book AI Demo', 'AI Marketing CTA');
+                  window.open('https://wa.me/918886435551?text=Hi! I would like to book an AI marketing demo.', '_blank');
+                }}
+              >
                 Book AI Demo
               </Button>
             </div>

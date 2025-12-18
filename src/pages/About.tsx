@@ -20,6 +20,7 @@ import {
   Linkedin,
   Twitter
 } from "lucide-react";
+import { trackCTAClick } from "@/hooks/useConversionTracking";
 
 const About = () => {
   const teamMembers = [
@@ -117,14 +118,14 @@ const About = () => {
             
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
               A team of AI marketing specialists dedicated to transforming healthcare businesses through 
-              innovative digital strategies. Currently serving 7+ clients with a major focus on the health sector, 
+              innovative digital strategies. Currently serving 11+ clients with a major focus on the health sector, 
               delivering exceptional results since 2024.
             </p>
 
             {/* Company Stats */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="glass-card p-6 rounded-2xl">
-                <div className="text-3xl font-bold gradient-text mb-2">7+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">11+</div>
                 <div className="text-muted-foreground text-sm">Active Clients</div>
               </div>
               <div className="glass-card p-6 rounded-2xl">
@@ -289,11 +290,25 @@ const About = () => {
               of AI-driven marketing firsthand.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-premium group">
+              <Button 
+                size="lg" 
+                className="shadow-premium group"
+                onClick={() => {
+                  trackCTAClick('Start Your AI Journey', 'About Page');
+                  window.open('https://wa.me/918886435551?text=Hi! I want to start my AI marketing journey with Grow Beyyond.', '_blank');
+                }}
+              >
                 Start Your AI Journey
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => {
+                  trackCTAClick('Meet the Team', 'About Page');
+                  document.querySelector('#team-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Meet the Team
               </Button>
             </div>
