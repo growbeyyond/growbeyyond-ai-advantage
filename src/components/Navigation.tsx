@@ -15,6 +15,7 @@ const Navigation = ({ onOpenAuditPopup }: NavigationProps) => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "AI Marketing", href: "/ai-marketing" },
+    { name: "Real Estate", href: "/real-estate-marketing" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
