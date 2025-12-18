@@ -8,8 +8,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, TrendingUp, DollarSign, Users, Calendar, Target, BarChart3, Zap, Award, CheckCircle } from "lucide-react";
 import { realCaseStudies } from "@/data/realCaseStudies";
+import { trackCTAClick } from "@/hooks/useConversionTracking";
 
 const Portfolio = () => {
+  const handleCTAClick = (buttonName: string) => {
+    trackCTAClick(buttonName, 'Portfolio Page');
+    window.open('https://wa.me/918886435551?text=Hi! I saw your portfolio and want to discuss my marketing needs.', '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -50,7 +55,7 @@ const Portfolio = () => {
             {/* Overall Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
               <div className="glass-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">7+</div>
+                <div className="text-3xl font-bold text-primary mb-2">11+</div>
                 <div className="text-sm text-muted-foreground">Active Clients</div>
               </div>
               <div className="glass-card p-6 text-center">
@@ -185,11 +190,19 @@ const Portfolio = () => {
               transform your marketing results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-premium">
+              <Button 
+                size="lg" 
+                className="shadow-premium"
+                onClick={() => handleCTAClick('Start Your Success Story')}
+              >
                 Start Your Success Story
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => handleCTAClick('Download Case Studies')}
+              >
                 Download Case Studies
               </Button>
             </div>

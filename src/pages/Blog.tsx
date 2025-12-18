@@ -19,9 +19,39 @@ import {
   Search
 } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import { useToast } from "@/hooks/use-toast";
+import { trackFormSubmit } from "@/hooks/useConversionTracking";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes('@')) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubscribing(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    trackFormSubmit('newsletter', { email });
+    
+    toast({
+      title: "Subscribed!",
+      description: "You'll receive our latest AI marketing insights weekly.",
+    });
+    setEmail("");
+    setIsSubscribing(false);
+  };
 
   const blogSchema = {
     "@context": "https://schema.org",
@@ -267,17 +297,20 @@ const Blog = () => {
               Get the latest AI marketing insights, case studies, and strategies delivered to your inbox every week.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <Input 
                 type="email" 
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-background-muted border border-border/50 focus:border-primary focus:outline-none"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 px-4 py-3 bg-background-muted border border-border/50 focus:border-primary"
+                disabled={isSubscribing}
               />
-              <Button className="px-8">
-                Subscribe
+              <Button className="px-8" type="submit" disabled={isSubscribing}>
+                {isSubscribing ? "Subscribing..." : "Subscribe"}
                 <Zap className="ml-2 w-4 h-4" />
               </Button>
-            </div>
+            </form>
           </div>
         </section>
       </main>
