@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, TrendingUp, Zap, Brain, Bot, Cpu, Network } from "lucide-react";
+import { trackCTAClick } from "@/hooks/useConversionTracking";
 
 interface HeroProps {
   onOpenAuditPopup?: () => void;
@@ -64,14 +65,21 @@ const Hero = ({ onOpenAuditPopup }: HeroProps) => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 px-4">
-          <Button size="lg" className="text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 shadow-intense group hover:shadow-[0_0_50px_hsl(var(--primary)/0.6)] hover:scale-105 transition-all duration-300 font-bold w-full sm:w-auto">
+          <Button 
+            size="lg" 
+            className="text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 shadow-intense group hover:shadow-[0_0_50px_hsl(var(--primary)/0.6)] hover:scale-105 transition-all duration-300 font-bold w-full sm:w-auto"
+            onClick={() => trackCTAClick('Start AI Transformation', 'Hero')}
+          >
             🚀 Start Your AI Transformation
             <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform duration-300" />
           </Button>
           <Button 
             variant="outline" 
             size="lg" 
-            onClick={onOpenAuditPopup}
+            onClick={() => {
+              trackCTAClick('Get Free AI Audit', 'Hero');
+              onOpenAuditPopup?.();
+            }}
             className="text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 border-2 border-primary/70 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] hover:scale-105 transition-all duration-300 font-semibold w-full sm:w-auto"
           >
             ⚡ Get Free AI Audit
