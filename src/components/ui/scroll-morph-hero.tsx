@@ -74,32 +74,7 @@ function FlipCard({ src, target }: FlipCardProps) {
   );
 }
 
-const TOTAL_IMAGES = 20;
 const MAX_SCROLL = 3000;
-
-// Marketing/Portfolio themed images
-const IMAGES = [
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&q=80", // Analytics dashboard
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&q=80", // Data visualization
-  "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=300&q=80", // Marketing graphs
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&q=80", // Team meeting
-  "https://images.unsplash.com/photo-1553484771-371a605b060b?w=300&q=80", // Strategy planning
-  "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&q=80", // Digital marketing
-  "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=300&q=80", // Social media
-  "https://images.unsplash.com/photo-1432888622747-4eb9a8f5a70c?w=300&q=80", // Creative workspace
-  "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&q=80", // Business presentation
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&q=80", // Team collaboration
-  "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=300&q=80", // Marketing campaign
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=300&q=80", // Tech innovation
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&q=80", // Team success
-  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80", // Collaboration
-  "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=300&q=80", // Growth charts
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&q=80", // Business analytics
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=300&q=80", // Office meeting
-  "https://images.unsplash.com/photo-1535303311164-664fc9ec6532?w=300&q=80", // Mobile marketing
-  "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=300&q=80", // Team brainstorm
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&q=80", // Tech team
-];
 
 const lerp = (start: number, end: number, t: number) => start * (1 - t) + end * t;
 
@@ -107,13 +82,27 @@ interface ScrollMorphHeroProps {
   title?: string;
   subtitle?: string;
   description?: string;
+  images?: string[];
 }
+
+// Default fallback images if none provided
+const DEFAULT_IMAGES = [
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&q=80",
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&q=80",
+  "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=300&q=80",
+  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&q=80",
+  "https://images.unsplash.com/photo-1553484771-371a605b060b?w=300&q=80",
+];
 
 export default function ScrollMorphHero({ 
   title = "Our Projects",
   subtitle = "SCROLL TO EXPLORE",
-  description = "Discover our portfolio of successful AI-powered marketing campaigns that have transformed businesses."
+  description = "Discover our portfolio of successful AI-powered marketing campaigns that have transformed businesses.",
+  images = DEFAULT_IMAGES
 }: ScrollMorphHeroProps) {
+  const IMAGES = images.length > 0 ? images : DEFAULT_IMAGES;
+  const TOTAL_IMAGES = IMAGES.length;
+  
   const [introPhase, setIntroPhase] = useState<AnimationPhase>("scatter");
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
