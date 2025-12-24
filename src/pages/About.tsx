@@ -31,6 +31,22 @@ const About = () => {
       avatar: "MC",
       image: "/lovable-uploads/888f5573-713f-426e-96c1-ab83c3a30e47.png",
       social: { linkedin: "#", twitter: "#" }
+    },
+    {
+      name: "Samreddy Tejavardhan Reddy",
+      role: "Co-Founder & Real Estate Marketing Expert",
+      bio: "Specialized in real estate marketing with deep expertise in property promotion, lead generation, and market positioning. Brings innovative digital marketing strategies tailored specifically for the real estate sector.",
+      avatar: "TR",
+      image: "",
+      social: { linkedin: "#", twitter: "#" }
+    },
+    {
+      name: "Alimineti Jaya Bharath Reddy",
+      role: "Co-Founder & Client Management",
+      bio: "Expert in client relationship management and business development. Ensures seamless communication and exceptional service delivery, building long-lasting partnerships with clients across industries.",
+      avatar: "BR",
+      image: "",
+      social: { linkedin: "#", twitter: "#" }
     }
   ];
 
