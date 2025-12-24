@@ -37,7 +37,7 @@ const About = () => {
       role: "Co-Founder & Real Estate Marketing Expert",
       bio: "Specialized in real estate marketing with deep expertise in property promotion, lead generation, and market positioning. Brings innovative digital marketing strategies tailored specifically for the real estate sector.",
       avatar: "TR",
-      image: "",
+      image: "/lovable-uploads/tejavardhan-reddy.jpeg",
       social: { linkedin: "#", twitter: "#" }
     },
     {
