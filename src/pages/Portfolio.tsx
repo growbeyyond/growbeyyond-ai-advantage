@@ -3,12 +3,13 @@ import ChatBot from "@/components/ChatBot";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, TrendingUp, DollarSign, Users, Calendar, Target, BarChart3, Zap, Award, CheckCircle } from "lucide-react";
+import { ArrowRight, TrendingUp, Users, Target, Zap, Award } from "lucide-react";
 import { realCaseStudies } from "@/data/realCaseStudies";
 import { trackCTAClick } from "@/hooks/useConversionTracking";
+import ScrollMorphHero from "@/components/ui/scroll-morph-hero";
 
 const Portfolio = () => {
   const handleCTAClick = (buttonName: string) => {
@@ -28,32 +29,27 @@ const Portfolio = () => {
       <Navigation />
       
       <main className="pt-16">
-        {/* Hero Section */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-background via-background-secondary to-background-muted">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
-          </div>
-          
-          <div className="relative z-10 container mx-auto px-4 text-center">
-            <Badge variant="secondary" className="mb-6 px-4 py-2">
-              <TrendingUp className="w-4 h-4 mr-2" />
-              Proven Success Stories
-            </Badge>
-            
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
-              Real Results From
-              <br />
-              <span className="gradient-text">AI-Powered Campaigns</span>
-            </h1>
-            
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover how we've helped healthcare professionals and businesses achieve extraordinary growth 
-              through our specialized AI marketing strategies, with proven expertise in the health sector.
-            </p>
+        {/* Interactive Scroll-Morph Hero */}
+        <ScrollMorphHero 
+          title="Our Success Stories"
+          subtitle="SCROLL TO EXPLORE"
+          description="Discover our portfolio of successful AI-powered marketing campaigns that have transformed businesses across industries."
+        />
 
-            {/* Overall Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        {/* Stats Section */}
+        <section className="py-16 bg-gradient-to-br from-background via-background-secondary to-background-muted">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge variant="secondary" className="mb-6 px-4 py-2">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Proven Success Stories
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Real Results From <span className="gradient-text">AI-Powered Campaigns</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="glass-card p-6 text-center">
                 <div className="text-3xl font-bold text-primary mb-2">11+</div>
                 <div className="text-sm text-muted-foreground">Active Clients</div>
