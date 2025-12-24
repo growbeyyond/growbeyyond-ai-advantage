@@ -34,6 +34,7 @@ const Portfolio = () => {
           title="Our Success Stories"
           subtitle="SCROLL TO EXPLORE"
           description="Discover our portfolio of successful AI-powered marketing campaigns that have transformed businesses across industries."
+          images={realCaseStudies.map(study => study.imageUrl)}
         />
 
         {/* Stats Section */}
