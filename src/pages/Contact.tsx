@@ -5,6 +5,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
+import { LetsWorkTogether } from "@/components/ui/lets-work-section";
 import { Badge } from "@/components/ui/badge";
 import { 
   MapPin, 
@@ -255,6 +256,9 @@ const Contact = () => {
             </div>
           </div>
         </section>
+
+        {/* Let's Work Together CTA */}
+        <LetsWorkTogether />
       </main>
       <Footer />
       <ChatBot />
