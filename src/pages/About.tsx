@@ -45,7 +45,7 @@ const About = () => {
       role: "Co-Founder & Client Management",
       bio: "Expert in client relationship management and business development. Ensures seamless communication and exceptional service delivery, building long-lasting partnerships with clients across industries.",
       avatar: "BR",
-      image: "",
+      image: "/lovable-uploads/bharath-reddy.jpeg",
       social: { linkedin: "#", twitter: "#" }
     }
   ];
