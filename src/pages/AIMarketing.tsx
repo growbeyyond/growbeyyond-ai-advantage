@@ -74,10 +74,24 @@ const AIMarketing = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="AI Marketing Solutions"
-        description="Harness cutting-edge AI technology for marketing automation, optimization, and acceleration. Our proprietary AI systems deliver results that traditional marketing cannot achieve."
-        keywords="AI marketing, artificial intelligence marketing, machine learning marketing, marketing automation, predictive targeting"
+        title="AI Marketing Solutions in India | Predictive & Generative AI"
+        description="Cutting-edge AI marketing services: predictive analytics, generative content, automated ad bidding & ML audience targeting. Proven 200-400% ROI lift for Indian brands."
+        keywords="AI marketing India, generative AI marketing, predictive analytics marketing, machine learning marketing, marketing automation 2026, AI ad optimization, ChatGPT marketing agency"
         canonicalUrl="https://growbeyyond.in/ai-marketing"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "AI Marketing Solutions",
+          "serviceType": "AI-powered Digital Marketing",
+          "url": "https://growbeyyond.in/ai-marketing",
+          "provider": {
+            "@type": "Organization",
+            "name": "Grow Beyyond",
+            "url": "https://growbeyyond.in"
+          },
+          "areaServed": { "@type": "Country", "name": "India" },
+          "description": "AI-driven marketing services including predictive analytics, generative content, automated ad bidding, ML-based audience segmentation and conversational AI for lead capture."
+        }}
       />
       
       <Navigation />

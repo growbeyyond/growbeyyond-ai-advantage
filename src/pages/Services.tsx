@@ -32,13 +32,25 @@ import { trackCTAClick } from "@/hooks/useConversionTracking";
 const Services = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Digital Marketing Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "Grow Beyyond",
-      "url": "https://growbeyyond.in"
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": "Digital Marketing Services",
+        "name": "Grow Beyyond Digital Marketing Services",
+        "url": "https://growbeyyond.in/services",
+        "provider": {
+          "@type": "Organization",
+          "name": "Grow Beyyond",
+          "url": "https://growbeyyond.in",
+          "logo": "https://growbeyyond.in/logo.png",
+          "telephone": "+91-8886435558",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "addressCountry": "IN"
+          }
+        },
     "areaServed": {
       "@type": "Country",
       "name": "India"
@@ -72,7 +84,53 @@ const Services = () => {
           }
         }
       ]
-    }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://growbeyyond.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://growbeyyond.in/services" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What digital marketing services does Grow Beyyond offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Grow Beyyond offers website creation, SEO, social media management, content & video production, multi-platform ad campaigns (Google, Meta, YouTube), TV interviews & PR, Wikipedia page creation, and AI-powered marketing automation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do Grow Beyyond marketing packages cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer three tiers — Basic (starter), Pro (most popular) and Advanced (enterprise). Pricing is customized based on industry, scope and goals. Contact us on WhatsApp at +91 8886435558 for a free quote."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which industries does Grow Beyyond specialize in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We specialize in healthcare, real estate, e-commerce, technology, and fashion/textile brands across India, with deep expertise in healthcare and real estate marketing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer AI-powered marketing services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We use AI for predictive analytics, audience segmentation, generative content, automated ad optimization, and chatbot-driven lead capture — included across our Pro and Advanced packages."
+            }
+          }
+        ]
+      }
+    ]
   };
 
   const allServices = [
@@ -164,9 +222,9 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Digital Marketing Services & Packages"
-        description="Comprehensive digital marketing services including website creation, social media management, SEO, ad campaigns, TV interviews, and Wikipedia page creation. Choose from Basic, Pro, or Advanced packages."
-        keywords="digital marketing services Hyderabad, social media management, SEO services India, website creation, content marketing, ad campaigns, TV interview PR"
+        title="Digital Marketing Services & Packages in Hyderabad"
+        description="AI-powered digital marketing services in Hyderabad: SEO, social media, website creation, ad campaigns, TV/PR, Wikipedia pages. Basic, Pro & Advanced packages with proven ROI."
+        keywords="digital marketing services Hyderabad, AI marketing packages India, SEO services Hyderabad, social media management India, website creation, ad campaigns Google Meta, TV interview PR, Wikipedia page creation, marketing automation 2026"
         canonicalUrl="https://growbeyyond.in/services"
         schema={serviceSchema}
       />
