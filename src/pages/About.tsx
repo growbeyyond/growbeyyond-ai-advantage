@@ -31,22 +31,6 @@ const About = () => {
       avatar: "MC",
       image: "/lovable-uploads/888f5573-713f-426e-96c1-ab83c3a30e47.png",
       social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Samreddy Tejavardhan Reddy",
-      role: "Co-Founder & Real Estate Marketing Expert",
-      bio: "Specialized in real estate marketing with deep expertise in property promotion, lead generation, and market positioning. Brings innovative digital marketing strategies tailored specifically for the real estate sector.",
-      avatar: "TR",
-      image: "/lovable-uploads/tejavardhan-reddy.jpeg",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Alimineti Jaya Bharath Reddy",
-      role: "Co-Founder & Client Management",
-      bio: "Expert in client relationship management and business development. Ensures seamless communication and exceptional service delivery, building long-lasting partnerships with clients across industries.",
-      avatar: "BR",
-      image: "/lovable-uploads/bharath-reddy.jpeg",
-      social: { linkedin: "#", twitter: "#" }
     }
   ];
 
@@ -98,16 +82,47 @@ const About = () => {
       year: "2025",
       title: "Continued Excellence",
       description: "Growing portfolio of satisfied clients with consistent results and innovative AI marketing approaches."
+    },
+    {
+      year: "2026",
+      title: "AI-First Expansion",
+      description: "Scaling our AI marketing platform with advanced LLM-powered automation, generative content workflows, and predictive analytics for clients across healthcare, real estate, and e-commerce."
     }
   ];
+
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Grow Beyyond",
+    "url": "https://growbeyyond.in",
+    "logo": "https://growbeyyond.in/logo.png",
+    "foundingDate": "2024-01",
+    "description": "AI-powered digital marketing agency specializing in healthcare, real estate, and e-commerce growth through machine learning, predictive analytics, and marketing automation.",
+    "founder": {
+      "@type": "Person",
+      "name": "Maniteja Chowdary",
+      "jobTitle": "Founder & Managing Director"
+    },
+    "sameAs": [
+      "https://growbeyyond.in"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-8886435558",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi", "Telugu"]
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="About Us"
-        description="Meet the AI marketing pioneers at Grow Beyyond. Founded in 2024, we specialize in healthcare marketing with 7+ active clients and ₹50L+ revenue impact. Learn about our mission and values."
-        keywords="about grow beyyond, AI marketing agency, healthcare marketing experts, Maniteja Chowdary"
+        description="Grow Beyyond is an AI marketing agency founded in 2024 by Maniteja Chowdary. 11+ active clients across healthcare, real estate, and e-commerce, with ₹50L+ revenue impact powered by AI, ML, and automation."
+        keywords="about grow beyyond, AI marketing agency India, healthcare marketing experts, Maniteja Chowdary, generative AI marketing, predictive analytics agency, marketing automation 2026"
         canonicalUrl="https://growbeyyond.in/about"
+        schema={aboutSchema}
       />
       
       <Navigation />
@@ -232,7 +247,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 max-w-md mx-auto">
               {teamMembers.map((member, index) => (
                 <Card 
                   key={index}
